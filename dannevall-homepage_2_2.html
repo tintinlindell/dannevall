@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dannevall Servicecenter — Bilverkstad på Värmdö och i Haninge</title>
+<meta name="description" content="Auktoriserad bilverkstad i Gustavsberg och Vega. Service, reparation, däck och bilglas — sedan 2001. 4,9 av 5 på Reco. Ring 08-570 278 00.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --orange: #DD8837;
+    --orange-dark: #B86A1F;
+    --orange-tint: #FBEFE0;
+    --ink: #18181B;
+    --ink-soft: #2A2A2E;
+    --ink-mute: #6B6B70;
+    --paper: #FAFAF7;
+    --paper-warm: #F2EFE8;
+    --line: #E4E0D8;
+    --line-soft: #ECE9E2;
+    --steel: #4A4A4F;
+    --display: 'Archivo', sans-serif;
+    --body: 'DM Sans', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--body);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Subtle paper grain */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: 768px) {
+    .container { padding: 0 20px; }
+  }
+
+  /* === HEADER === */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(250, 250, 247, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    color: var(--ink);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .logo:hover { opacity: 0.85; }
+
+  .logo-img {
+    height: 44px;
+    width: auto;
+    display: block;
+  }
+
+  .footer-logo-img {
+    height: 64px;
+    width: auto;
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a:hover {
+    color: var(--orange-dark);
+  }
+
+  .nav-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink-mute);
+    text-decoration: none;
+  }
+
+  .nav-phone:hover { color: var(--ink); }
+
+  .nav-phone-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4ADE80;
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.2);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-primary {
+    background: var(--orange);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--orange-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(221, 136, 55, 0.3);
+  }
+
+  .btn-secondary {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .btn-secondary:hover {
+    background: var(--ink-soft);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--ink);
+  }
+
+  .btn-arrow {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.25s;
+  }
+
+  .btn:hover .btn-arrow {
+    transform: translateX(3px);
+  }
+
+  /* === HERO === */
+  .hero {
+    padding: 140px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.1s forwards;
+  }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    color: var(--ink);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero h1 .accent {
+    color: var(--orange);
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  .hero h1 .strike {
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero h1 .strike::after {
+    content: '';
+    position: absolute;
+    left: -2%;
+    right: -2%;
+    bottom: 18%;
+    height: 8px;
+    background: var(--orange);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: drawLine 0.6s 1s forwards;
+  }
+
+  @keyframes drawLine {
+    to { transform: scaleX(1); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-lede {
+    font-size: 19px;
+    color: var(--ink-mute);
+    max-width: 540px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.5s forwards;
+  }
+
+  /* Hero visual */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 24px;
+    overflow: hidden;
+    background: var(--ink);
+    opacity: 0;
+    animation: fadeUp 1s 0.3s forwards;
+  }
+
+  .hero-visual-photo {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(24, 24, 27, 0.7) 0%, rgba(24, 24, 27, 0.2) 50%, rgba(221, 136, 55, 0.3) 100%),
+      repeating-linear-gradient(45deg, #2A2A2E 0px, #2A2A2E 2px, #1F1F22 2px, #1F1F22 4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-visual-overlay {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    color: white;
+    z-index: 2;
+  }
+
+  .hero-visual-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+  }
+
+  .hero-visual-stat {
+    text-align: right;
+  }
+
+  .hero-visual-stat-num {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 0.9;
+    color: var(--orange);
+    letter-spacing: -0.03em;
+  }
+
+  .hero-visual-stat-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+  }
+
+  .hero-visual-corner {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    right: 24px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+  }
+
+  .hero-visual-est {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+  }
+
+  /* === TICKER === */
+  .ticker {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 20px 0;
+    overflow: hidden;
+    border-top: 1px solid var(--ink-soft);
+    border-bottom: 1px solid var(--ink-soft);
+  }
+
+  .ticker-track {
+    display: flex;
+    gap: 64px;
+    animation: scroll 40s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .ticker-item {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .ticker-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--orange);
+  }
+
+  /* === SECTIONS === */
+  section {
+    padding: 120px 0;
+    position: relative;
+  }
+
+  @media (max-width: 768px) {
+    section { padding: 80px 0; }
+    .hero { padding: 120px 0 60px; }
+  }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+  }
+
+  .section-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 32px;
+    max-width: 800px;
+  }
+
+  .section-lede {
+    font-size: 19px;
+    color: var(--ink-mute);
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 64px;
+  }
+
+  /* === LOCATIONS === */
+  .locations {
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+  }
+
+  .locations-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  @media (max-width: 900px) {
+    .locations-grid { grid-template-columns: 1fr; }
+  }
+
+  .location-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 40px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .location-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--orange);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .location-card:hover {
+    border-color: var(--ink);
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px rgba(24, 24, 27, 0.08);
+  }
+
+  .location-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .location-photo {
+    aspect-ratio: 16/10;
+    background:
+      linear-gradient(135deg, rgba(24, 24, 27, 0.5), rgba(221, 136, 55, 0.2)),
+      repeating-linear-gradient(45deg, #2A2A2E 0px, #2A2A2E 2px, #1F1F22 2px, #1F1F22 4px);
+    border-radius: 12px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .location-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+
+  .location-name {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+
+  .location-address {
+    color: var(--ink-mute);
+    font-size: 15px;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .location-brands {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .brand-pill {
+    padding: 6px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    font-family: var(--mono);
+    letter-spacing: 0.02em;
+  }
+
+  .location-cta {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 15px;
+  }
+
+  .location-cta-arrow {
+    transition: transform 0.25s;
+  }
+
+  .location-card:hover .location-cta-arrow {
+    transform: translateX(4px);
+  }
+
+  /* === SERVICES === */
+  .services {
+    background: var(--paper-warm);
+    border-top: 1px solid var(--line);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 48px;
+  }
+
+  @media (max-width: 900px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
+
+  .service {
+    background: white;
+    padding: 40px;
+    transition: background 0.3s;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 240px;
+  }
+
+  .service:hover {
+    background: var(--paper);
+  }
+
+  .service-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 24px;
+    color: var(--orange);
+  }
+
+  .service-title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .service-desc {
+    color: var(--ink-mute);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+
+  .service-link {
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    transition: gap 0.25s;
+  }
+
+  .service:hover .service-link {
+    gap: 10px;
+    color: var(--orange-dark);
+  }
+
+  /* === STATS / TRUST === */
+  .trust {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .trust::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(221, 136, 55, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  @media (max-width: 900px) {
+    .trust-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  .trust-headline {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .trust-headline .accent {
+    color: var(--orange);
+    font-style: italic;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  @media (max-width: 600px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  }
+
+  .stat {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 24px;
+  }
+
+  .stat-num {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 12px;
+  }
+
+  .stat-num .small {
+    font-size: 0.5em;
+    color: var(--ink-mute);
+    font-weight: 500;
+  }
+
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+  }
+
+  /* === REVIEWS === */
+  .reviews {
+    background: var(--paper);
+  }
+
+  .reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .reviews-rating {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .stars {
+    display: flex;
+    gap: 2px;
+    color: var(--orange);
+  }
+
+  .reviews-rating-text {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink-mute);
+  }
+
+  .reviews-rating-text strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 900px) {
+    .reviews-grid { grid-template-columns: 1fr; }
+  }
+
+  .review {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .review:hover {
+    border-color: var(--orange);
+    transform: translateY(-2px);
+  }
+
+  .review-stars {
+    margin-bottom: 20px;
+  }
+
+  .review-quote {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    flex-grow: 1;
+    quotes: '"' '"';
+  }
+
+  .review-attr {
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--ink-mute);
+  }
+
+  .review-source {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* === BRANDS === */
+  .brands {
+    background: var(--paper-warm);
+    border-top: 1px solid var(--line);
+    padding: 80px 0;
+  }
+
+  .brands-label {
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-mute);
+    margin-bottom: 40px;
+  }
+
+  .brands-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    .brands-row { gap: 32px; }
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+  }
+
+  .brand-logo img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+
+  .brand-logo:hover { opacity: 1; }
+
+  /* === CTA SECTION === */
+  .cta-section {
+    background: var(--orange);
+    color: white;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  @media (max-width: 900px) {
+    .cta-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .cta-headline {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(40px, 5.5vw, 72px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+
+  .cta-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 480px;
+    opacity: 0.95;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn-on-orange {
+    background: white;
+    color: var(--ink);
+  }
+
+  .btn-on-orange:hover {
+    background: var(--ink);
+    color: white;
+    transform: translateY(-1px);
+  }
+
+  .btn-on-orange-ghost {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .btn-on-orange-ghost:hover {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* === FOOTER === */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 0 32px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 64px;
+    margin-bottom: 64px;
+  }
+
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+
+  .footer-brand h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .footer-brand p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 360px;
+    margin-bottom: 24px;
+  }
+
+  .footer-section h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--orange);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .footer-section ul {
+    list-style: none;
+  }
+
+  .footer-section li {
+    margin-bottom: 12px;
+  }
+
+  .footer-section a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+
+  .footer-section a:hover { color: white; }
+
+  .footer-section p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Mobile menu */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-phone { display: none; }
+  }
+
+  /* Hide scrollbar on horizontal scrolls but keep functionality */
+  .scroll-hide::-webkit-scrollbar { display: none; }
+  .scroll-hide { scrollbar-width: none; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <nav class="nav">
+      <a href="#" class="logo" aria-label="Dannevall Servicecenter — startsida">
+        <svg class="logo-img" aria-label="Dannevall Servicecenter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="logo-light" x="0px" y="0px" viewBox="0 0 190.2 75.8" style="enable-background:new 0 0 190.2 75.8;" xml:space="preserve"> <style type="text/css"> .lhdr0{fill:#DE9529;} .lhdr1{fill:#222221;} .lhdr2{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;} .lhdr3{fill-rule:evenodd;clip-rule:evenodd;fill:#DE9529;} .lhdr4{fill:#FFFFFF;} </style> <path class="lhdr0" d="M188.5,3.1C187.4,1.8,185.8,1,184,1H23.8c-2.6,0-4.8,1.7-5.5,4.2c-0.3,1.1-3.4,14-4.6,18.6 C5.8,28.9,1,37.7,1,47.1c0,15.1,12.3,27.5,27.5,27.5c9.2,0,21.2-4.9,26-18.6H61c-0.9,3.7-2.4,9.7-2.6,10.6c-0.4,1.7,0,3.5,1,4.8 c1.1,1.4,2.7,2.2,4.4,2.2h107c2.6,0,4.9-1.7,5.5-4.2c0.1-0.4,1.6-7.5,7.8-36.4c2.7-12.6,5.2-24.5,5.4-25.1 C190,6.2,189.6,4.5,188.5,3.1z"></path> <path class="lhdr1" d="M186.2,4.9c-0.5-0.7-1.3-1.1-2.2-1.1H23.8c-1.3,0-2.3,0.8-2.7,2.2c-0.3,1.2-4.2,17.1-4.8,19.7 C8.6,30.1,3.9,38.3,3.9,47.1c0,13.6,11,24.6,24.6,24.6c8.6,0,20-4.9,23.9-18.6h11.4c0.2,0,0.6,0,0.7,0.2c0.1,0.2,0.1,0.5,0.1,0.5 c0,0-2.9,12-3.3,13.4c-0.2,0.8,0,1.7,0.5,2.4c0.5,0.7,1.3,1.1,2.2,1.1h107c1.3,0,2.4-0.8,2.7-2.1c0.1-0.4,3.3-15.3,7.8-36.3 c2.7-12.7,5.3-24.7,5.4-25.1C187,6.4,186.8,5.6,186.2,4.9z"></path> <g> <path class="lhdr2" d="M9.9,47c0-10.2,8.3-18.6,18.6-18.6S47,36.8,47,47s-8.3,18.6-18.6,18.6S9.9,57.3,9.9,47L9.9,47z M17.4,47 c0-6.1,4.9-11,11-11c6.1,0,11,4.9,11,11c0,6.1-4.9,11-11,11C22.4,58.1,17.4,53.1,17.4,47L17.4,47z"></path> <path class="lhdr2" d="M32.4,38.6c0.2-0.3,1.1-0.2,1.9,0.4c0.8,0.6,1.3,1.4,0.9,1.7l-4.8,4.6c-0.2,0.2-0.5,0.2-0.7,0 c-0.2-0.2-0.3-0.4-0.2-0.7L32.4,38.6L32.4,38.6z M36.6,42.6c0.3-0.2,1,0.5,1.3,1.4c0.3,0.9,0.2,1.9-0.2,1.9L31,46.8 c-0.3,0-0.5-0.1-0.6-0.4c-0.1-0.3,0-0.5,0.3-0.6L36.6,42.6L36.6,42.6z M37.6,48.2c0.4,0.1,0.5,1,0.2,1.9c-0.3,0.9-0.9,1.6-1.3,1.4 l-5.9-3.2c-0.2-0.1-0.3-0.4-0.3-0.6c0.1-0.3,0.3-0.4,0.6-0.4L37.6,48.2L37.6,48.2z M35.2,53.4c0.3,0.3-0.2,1.1-0.9,1.7 c-0.8,0.6-1.7,0.8-1.9,0.4l-2.9-6c-0.1-0.2,0-0.5,0.2-0.7c0.2-0.2,0.5-0.1,0.7,0L35.2,53.4L35.2,53.4z M30.2,56.1 c0.1,0.4-0.8,0.8-1.8,0.8c-1,0-1.8-0.4-1.8-0.8l1.2-6.6c0-0.3,0.3-0.5,0.5-0.5c0.3,0,0.5,0.2,0.5,0.5L30.2,56.1L30.2,56.1z M24.5,55.4c-0.2,0.3-1.1,0.2-1.9-0.4c-0.8-0.6-1.3-1.4-0.9-1.7l4.8-4.6c0.2-0.2,0.5-0.2,0.7-0.1c0.2,0.2,0.3,0.4,0.2,0.7 L24.5,55.4L24.5,55.4z M20.3,51.5c-0.3,0.2-1-0.5-1.3-1.4c-0.3-0.9-0.2-1.9,0.2-1.9l6.6-0.9c0.3,0,0.5,0.1,0.6,0.4 c0.1,0.3,0,0.5-0.3,0.6L20.3,51.5L20.3,51.5z M19.3,45.9c-0.4-0.1-0.5-1-0.2-1.9c0.3-0.9,0.9-1.6,1.3-1.4l5.9,3.2 c0.2,0.1,0.3,0.4,0.3,0.6c-0.1,0.3-0.3,0.4-0.6,0.4L19.3,45.9L19.3,45.9z M21.7,40.7c-0.3-0.3,0.2-1.1,0.9-1.7 c0.8-0.6,1.7-0.8,1.9-0.4l2.9,6c0.1,0.2,0,0.5-0.2,0.7c-0.2,0.2-0.5,0.1-0.7-0.1L21.7,40.7L21.7,40.7z M26.7,37.9 c-0.1-0.4,0.8-0.8,1.8-0.8c1,0,1.8,0.4,1.8,0.8L29,44.5c0,0.3-0.3,0.5-0.5,0.5c-0.3,0-0.5-0.2-0.5-0.5L26.7,37.9L26.7,37.9z M27.2,47c0-0.7,0.6-1.3,1.3-1.3s1.3,0.6,1.3,1.3c0,0.7-0.6,1.3-1.3,1.3S27.2,47.7,27.2,47L27.2,47z M18.2,47 c0-5.7,4.6-10.2,10.2-10.2c5.7,0,10.2,4.6,10.2,10.2c0,5.7-4.6,10.2-10.2,10.2C22.8,57.3,18.2,52.7,18.2,47L18.2,47z"></path> </g> <g> <path class="lhdr1" d="M61.1,27.7l2.3-9.1l0-0.1c0.1-0.4,0.2-0.8,0.2-1.3c0-1.4-0.7-3.2-3.9-3.2l-8.3,0c-4.2,0.3-4.8,2.7-5.4,4.8 l-0.7,2.8h6.9l0.6-2.2h2.8L54.9,22h-4.9c-4.4,0-5.3,1.8-5.9,4.1l-0.8,3.3c-0.1,0.6-0.2,1.1-0.2,1.6c0,1.4,0.7,2.1,1.3,2.4 c0.7,0.3,1.4,0.3,2,0.3c0,0,0,0,0.1,0h3.7l2.2-1.5L52,33.7h9.2l1.5-6H61.1z M60.5,32.7h-7.2l0.7-2.9l-4,2.9h-3.5 c-0.5,0-1.1,0-1.6-0.2c-0.3-0.2-0.8-0.5-0.8-1.5c0-0.5,0-0.9,0.1-1.4l0.8-3.3c0.5-2,1.2-3.3,4.9-3.3h5.7l1.1-4.6h-4.8l-0.6,2.2 h-4.8l0.4-1.6c0.5-2.1,1-3.9,4.4-4.1h8.2c2,0,2.9,0.7,2.9,2.2c0,0.4-0.1,0.7-0.1,1.2l-2.6,10.4h1.7L60.5,32.7z"></path> <path class="lhdr1" d="M45.4,15.9c0.2-1,0.3-1.2,0.3-1.4c0,0,0-0.1,0-0.1c0.1-0.4,0.1-0.6,0.1-0.7c0,0,0-0.1,0-0.2 c0.1-0.3,0.5-3.2-2.2-4.5c-1-0.5-2-0.6-4.6-0.6H25.8l-1.6,6.5h1.8l-3,11.9h-1.8l-1.7,6.8h0.6h13.5c6.5-0.1,7.9-2.2,9.9-10.4 L45.4,15.9z M33.6,32.7H20.8l1.2-4.8h1.8l3.5-13.9h-1.8l1.1-4.5H39c2.4,0,3.3,0.1,4.2,0.5c2,0.9,1.7,3.1,1.6,3.4 c0,0.2-0.1,0.4-0.1,0.6c0,0.1,0,0.2-0.1,0.3c0,0.2-0.1,0.3,0,0.4c0,0.1-0.1,0.4-0.2,1l-1.9,7.4C40.5,31.3,39.4,32.6,33.6,32.7z"></path> <path class="lhdr1" d="M49.2,29.2h4.9l0.9-3.8h-4.9L49.2,29.2z M50.9,26.4h2.8l-0.4,1.8h-2.9L50.9,26.4z"></path> <path class="lhdr1" d="M29.8,27.8h5l0.1-0.4c1.2-4.3,2.5-9.4,3.1-12.9l0.1-0.6h-4.9L29.8,27.8z M37,14.9c-0.6,3.4-1.8,7.9-2.9,11.9 h-3l3-11.9H37z"></path> <path class="lhdr1" d="M143.3,29.2h4.9l0.9-3.8h-4.9L143.3,29.2z M145,26.4h2.8l-0.4,1.8h-2.9L145,26.4z"></path> <path class="lhdr1" d="M165.8,27.6l4.4-18.8h-9.5l-1.4,6.1h1.8l-2.9,12.7h-1.6l-1.4,6h10.5l1.4-6H165.8z M165,32.7h-8.5l1-4h1.6 l3.4-14.7h-1.8l1-4.1h7.4l-4.4,18.8h1.4L165,32.7z"></path> <path class="lhdr1" d="M155.1,27.7l2.3-9.1l0-0.1c0.1-0.4,0.2-0.8,0.2-1.3c0-1.4-0.7-3.2-3.9-3.2l-8.3,0c-4.2,0.3-4.8,2.7-5.4,4.8 l-0.7,2.8h6.9l0.6-2.2h2.8l-0.6,2.6H144c-4.4,0-5.3,1.8-5.9,4.1l-0.8,3.3c-0.1,0.6-0.2,1.1-0.2,1.6c0,1.4,0.7,2.1,1.3,2.4 c0.7,0.3,1.4,0.3,2,0.3c0,0,0,0,0.1,0h3.7l2.2-1.5l-0.4,1.5h8.8l1.5-6H155.1z M154.2,32.7h-6.8l0.7-2.9l-4,2.9h-3.5 c-0.5,0-1.1,0-1.6-0.2c-0.3-0.2-0.8-0.5-0.8-1.5c0-0.5,0-0.9,0.1-1.4l0.8-3.3c0.5-2,1.2-3.3,4.9-3.3h5.7l1.1-4.6H146l-0.6,2.2h-4.8 L141,19c0.5-2.1,1-3.9,4.4-4.1h8.2c2,0,2.9,0.7,2.9,2.2c0,0.4-0.1,0.7-0.1,1.2l-2.6,10.4h1.3L154.2,32.7z"></path> <path class="lhdr1" d="M134.3,14l-4.2,10.5l1.1-10.5h-7.7l-1.5,6h1.5l-0.6,13.7h10l8.6-19.7H134.3z M132.2,32.7h-8.3l0.6-13.7h-1.2 l1-4h5.8l-1.4,13l1,0.2L135,15h5L132.2,32.7z"></path> <path class="lhdr1" d="M180.9,8.8h-9.5l-1.4,6.1h1.8l-2.9,12.7h-1.6l-1.4,6h10.4l1.4-6h-1.2L180.9,8.8z M175.5,32.7h-8.3l1-4h1.6 l3.4-14.7h-1.8l1-4.1h7.4l-4.4,18.8h1.2L175.5,32.7z"></path> <path class="lhdr1" d="M116.3,18.4h-3.5l-0.1,0.3c-0.4,1.1-0.5,1.4-0.7,2.8l-0.1,0.6h3.4L116.3,18.4z M114.6,21.1h-1.5 c0.1-0.7,0.2-1.1,0.4-1.7h1.5L114.6,21.1z"></path> <path class="lhdr1" d="M112.9,28.2h-1.5c0.1-0.5,0.2-1,0.4-1.5c0.1-0.3,0.2-0.7,0.3-1.1h8.6l1.7-7l0.1-0.3c0.1-0.4,0.1-0.8,0.1-1.2 c0-2.9-2.5-3.1-4.2-3.1h-6.5c-3.7,0-4.9,1.9-5.8,5.2l-0.6,2.1l-1.3,5.6c-0.3,1.2-0.6,2.7-0.6,3.9c0,2.9,2.6,2.9,4.1,3h6.8 c3.9-0.1,4.7-1.3,5.6-4.2l0.9-3.4h-7.4L112.9,28.2z M114.2,27.1h5.4l-0.5,2.1c-0.8,2.6-1.2,3.4-4.6,3.5h-6.8c-1.9,0-3.1-0.2-3.1-2 c0-1.1,0.3-2.5,0.6-3.7l1.3-5.6l0.6-2.1c0.9-3.4,2.1-4.4,4.8-4.4l6.5,0c2,0.1,3.3,0.3,3.3,2.1c0,0.3-0.1,0.6-0.1,1l-1.6,6.5h-8.6 l-0.1,0.4c-0.1,0.6-0.2,1-0.3,1.5c-0.2,0.7-0.3,1.3-0.5,2.2l-0.1,0.6h3.5L114.2,27.1z"></path> <path class="lhdr1" d="M101.7,27.6l2-8c0.3-1.3,0.5-2.2,0.5-2.8c0-2.9-3.2-2.9-4.3-2.9h-2.5l-2.6,2l0.5-2H86l-1.5,6h1.6l-3.4,13.7 h7.7L93.8,20H96l-3.4,13.7h9.4l1.5-6H101.7z M101.2,32.7h-7.4L97.3,19H93l-3.4,13.7h-5.6L87.4,19h-1.6l1-4H94l-0.9,3.6l4.6-3.6h2.2 c2.3,0,3.3,0.5,3.3,1.9c0,0.5-0.1,1.4-0.4,2.5l-2.3,9.3h1.8L101.2,32.7z"></path> <path class="lhdr1" d="M81.2,27.6l2-8c0.3-1.3,0.5-2.2,0.5-2.8c0-2.9-3.2-2.9-4.3-2.9h-2.5l-2.6,2l0.5-2h-9.3L64,20h1.6l-3.4,13.7 h7.7L73.3,20h2.2l-3.4,13.7h9.4l1.5-6H81.2z M80.8,32.7h-7.4L76.8,19h-4.3l-3.4,13.7h-5.6L66.9,19h-1.6l1-4h7.3l-0.9,3.6l4.6-3.6 h2.2c2.3,0,3.3,0.5,3.3,1.9c0,0.8-0.3,2.1-0.4,2.5L80,28.6h1.8L80.8,32.7z"></path> </g> <g> <path class="lhdr3" d="M24.8,14.4h1.8l-3.2,12.9h-1.8l-1.4,5.8h13.5c6.1-0.1,7.4-1.7,9.4-10l1.9-7.4c0.4-1.8,0.2-0.8,0.3-1.5 c0.2-1,0-0.1,0.1-0.9c0.2-0.8,0.2-3-1.9-3.9c-0.9-0.4-1.9-0.6-4.4-0.6H26.1L24.8,14.4L24.8,14.4z M33.7,14.4h3.9 c-0.7,3.9-2,9-3.1,12.9h-4L33.7,14.4L33.7,14.4z"></path> <path class="lhdr3" d="M60.4,28.2l2.4-9.7c0.1-0.4,0.2-0.8,0.2-1.3c0-2.6-2.5-2.7-3.4-2.7h-8.2c-3.8,0.2-4.4,2.3-4.9,4.5l-0.6,2.2 h5.8l0.6-2.2h3.8l-0.8,3.6h-5.3c-4.1,0-4.8,1.6-5.4,3.7l-0.8,3.3c-0.1,0.6-0.2,1-0.2,1.6c0,2.2,1.9,2.2,2.9,2.2h3.6l3.1-2.2 l-0.5,2.2h8.2l1.3-5H60.4L60.4,28.2z M49.8,28.7l0.7-2.8h3.9l-0.7,2.8H49.8L49.8,28.7z"></path> <path class="lhdr0" d="M65.9,14.5l-1.3,5h1.6l-3.4,13.7h6.7l3.4-13.7h3.3l-3.4,13.7h8.4l1.3-5h-1.8l2.2-8.6c0.2-0.8,0.4-1.9,0.4-2.7 c0-2.3-2.4-2.4-3.8-2.4h-2.3l-3.6,2.8l0.7-2.8H65.9L65.9,14.5z"></path> <path class="lhdr0" d="M86.4,14.5l-1.3,5h1.6l-3.4,13.7H90l3.4-13.7h3.3l-3.4,13.7h8.4l1.3-5h-1.8l2.2-8.6c0.2-0.8,0.4-1.9,0.4-2.7 c0-2.3-2.4-2.4-3.8-2.4h-2.3l-3.6,2.8l0.7-2.8H86.4L86.4,14.5z"></path> <path class="lhdr3" d="M113.8,26.6l-0.5,2.1h-2.5c0.3-1.3,0.5-2.1,0.8-3.6h8.6l1.6-6.6c0.1-0.5,0.2-1,0.2-1.4c0-2.4-1.9-2.5-3.7-2.6 h-6.5c-3.2,0-4.4,1.4-5.3,4.8l-0.6,2.1l-1.2,4.9c-0.3,1.2-0.8,3.1-0.8,4.5c0,2.3,1.9,2.4,3.6,2.5h6.8c3.6-0.1,4.2-1,5.1-3.9 l0.7-2.7H113.8L113.8,26.6z M115.7,18.9l-0.7,2.7h-2.5c0.2-1.4,0.3-1.7,0.6-2.7H115.7L115.7,18.9z"></path> <polygon class="lhdr0" points="134.6,14.5 129.2,28 130.6,14.5 123.8,14.5 122.6,19.5 124,19.5 123.3,33.2 132.5,33.2 140.7,14.5 134.6,14.5 "></polygon> <path class="lhdr3" d="M154.5,28.2l2.4-9.7c0.1-0.4,0.2-0.8,0.2-1.3c0-2.6-2.5-2.7-3.4-2.7h-8.2c-3.8,0.2-4.4,2.3-4.9,4.5l-0.6,2.2 h5.8l0.6-2.2h3.8l-0.8,3.6H144c-4.1,0-4.8,1.6-5.4,3.7l-0.8,3.3c-0.1,0.6-0.2,1-0.2,1.6c0,2.2,1.9,2.2,2.9,2.2h3.6l3.1-2.2 l-0.5,2.2h7.8l1.3-5H154.5L154.5,28.2z M143.9,28.7l0.7-2.8h3.9l-0.7,2.8H143.9L143.9,28.7z"></path> <polygon class="lhdr0" points="161.1,9.3 159.9,14.4 161.8,14.4 158.6,28.1 157,28.1 155.8,33.2 165.4,33.2 166.5,28.1 165.2,28.1 169.6,9.3 161.1,9.3 "></polygon> <polygon class="lhdr0" points="171.8,9.3 170.6,14.4 172.4,14.4 169.3,28.1 167.7,28.1 166.5,33.2 175.9,33.2 177.1,28.1 175.8,28.1 180.2,9.3 171.8,9.3 "></polygon> </g> <g> <path class="lhdr1" d="M57.6,47.8H50l1.1-4.4H55l-1.8-0.4c-0.7-0.2-1.6-0.4-1.6-1.5c0-0.4,0.1-0.7,0.2-1l0.4-1.4 c0.7-2.5,1.5-3.2,3.6-3.2h7.3l-1.1,4.4h-3.2l1,0.3c0.6,0.2,1.7,0.5,1.7,1.6c0,0.3-0.1,1-0.2,1.3l-0.3,1.4c-0.1,0.7-0.3,1.2-0.6,1.6 C59.7,47.8,58.3,47.8,57.6,47.8z M51.3,46.8h6.3c0.8,0,1.6-0.1,2.1-0.9c0.2-0.3,0.3-0.7,0.4-1.3l0.3-1.4c0.1-0.3,0.1-0.9,0.1-1.1 c0-0.2-0.1-0.4-1-0.7l-3.9-1.1l0.5-1.9H59l-0.2,0.7h2.5l0.6-2.4h-6.1c-1.6,0-2.1,0.2-2.7,2.4l-0.4,1.4c-0.1,0.3-0.1,0.5-0.1,0.8 c0,0.3,0,0.3,0.8,0.5l4.3,1.1l-0.5,2.2h-2.8l0.2-0.8h-2.8L51.3,46.8z M55.7,44.1h0.7l0.1-0.4l-0.6-0.2L55.7,44.1z M56.9,39.5 l0.8,0.2l0.1-0.4h-0.8L56.9,39.5z"></path> <path class="lhdr1" d="M67.6,47.8h-3.9c-0.8,0-2.6,0-2.6-2c0-0.7,0.2-1.6,0.4-2.4l1.1-4.5c0.5-1.9,1.3-3.2,3.6-3.2h3.7 c0.8,0,2.7,0,2.7,2c0,0.3,0,0.6-0.1,1l-1,4.1h0.2L71,45.1C70.6,47,70,47.8,67.6,47.8z M66.1,36.7c-1.5,0-2.1,0.6-2.6,2.5l-0.3,1.2 l-0.8,3.3c-0.2,0.7-0.4,1.5-0.4,2.1c0,0.8,0.3,1,1.6,1h3.9c1.8,0,2.1-0.4,2.5-1.9l0.3-1h-2.7l-0.3,1.2h-2.5l0.1-0.6 c0.1-0.5,0.2-0.9,0.3-1.3l0.3-1.2h5l0.8-3.5c0.1-0.3,0.1-0.5,0.1-0.7c0-0.8-0.4-1-1.7-1H66.1z M66.1,44.1h0.4l0.3-1.1h-0.4 l-0.1,0.4C66.2,43.7,66.2,43.9,66.1,44.1z M68.4,41H66l0.1-0.6c0.1-0.8,0.2-1,0.4-1.7l0.1-0.3H69L68.4,41z M67.1,40h0.4l0.1-0.6 h-0.4C67.2,39.6,67.2,39.7,67.1,40z"></path> <path class="lhdr1" d="M77.2,47.8h-7l1-4h1l1-4.1h-1l1-4h6l-0.1,0.4l0.5-0.4h0.9c1.9,0,2.2,1,2.2,1.7c0,0.3,0,0.6-0.1,0.9l-0.8,3.3 h-3.6l0.5-1.9h-0.3l-1,4.1h1.1L77.2,47.8z M71.4,46.8h4.9l0.5-2h-1.1l1.4-5.8l0,0l0.6-2.3h-3.9l-0.5,2h1L73,44.8h-1L71.4,46.8z M79.2,40.6h1.6l0.6-2.6c0.1-0.2,0.1-0.4,0.1-0.6c0-0.3-0.1-0.7-1.2-0.7h-0.5l-2.2,2h2.1L79.2,40.6z"></path> <path class="lhdr1" d="M88,47.8h-6.2l0.4-8.1h-0.6l1-4h4.6l-0.5,4.9l1.9-4.9h4.7l-1,4h-0.7L88,47.8z M82.9,46.8h4.5l3.5-8.1h0.6 l0.5-2h-2.7l-3,7.7l-1-0.2l0.8-7.4h-2.7l-0.5,2h0.4L82.9,46.8z"></path> <path class="lhdr1" d="M96.5,47.8h-6.7l1-4h0.9l1-4.1h-1l1-4h5.9l-2,8.1h0.9L96.5,47.8z M91.1,46.8h4.6l0.5-2h-0.9l2-8.1h-3.8l-0.5,2 h1l-1.5,6.1h-0.9L91.1,46.8z M96.5,35.3c-1.2,0-2.2-1-2.2-2.2c0-1.2,1-2.2,2.2-2.2c1.2,0,2.2,1,2.2,2.2 C98.7,34.3,97.7,35.3,96.5,35.3z M96.5,31.9c-0.6,0-1.2,0.6-1.2,1.2c0,0.7,0.5,1.2,1.2,1.2c0.6,0,1.2-0.6,1.2-1.2 C97.7,32.5,97.1,31.9,96.5,31.9z"></path> <path class="lhdr1" d="M102.4,47.8H99c-2.2,0-2.5-1.4-2.5-2c0-0.6,0.2-1.9,0.4-2.5l0.9-3.6c0.7-2.7,1.3-4,4.1-4h3.1 c0.9,0,2.8,0,2.8,2c0,0.3-0.1,0.6-0.1,0.9l-0.6,2.3h-4.4l0.3-1.2h-0.3c-0.4,1.4-0.8,3-1,4.1h0.3l0.3-1.1h4.5l-0.6,2.3 c-0.2,0.8-0.6,1.7-1.6,2.4C103.9,47.8,103.1,47.8,102.4,47.8z M101.9,36.7c-1.9,0-2.4,0.5-3.1,3.3l-0.9,3.6 c-0.2,0.6-0.4,1.8-0.4,2.2c0,0.3,0,1,1.5,1h3.4c0.7,0,1.2,0,1.7-0.3c0.8-0.4,1-1.1,1.1-1.7l0.3-1.1h-2.5l-0.3,1.1h-2.3l0.1-0.6 c0.2-1.3,0.7-3.4,1.3-5.2l0.1-0.4h2.3l-0.3,1.2h2.3l0.4-1.5c0.1-0.2,0.1-0.4,0.1-0.7c0-0.8-0.4-1-1.8-1H101.9z"></path> <path class="lhdr1" d="M112.4,47.8h-3.9c-0.8,0-2.6,0-2.6-2c0-0.7,0.2-1.6,0.4-2.3l1.1-4.5c0.5-1.9,1.3-3.2,3.6-3.2h3.7 c0.8,0,2.7,0,2.7,2c0,0.3,0,0.6-0.1,1l-1,4.1h0.2l-0.6,2.2C115.4,47,114.8,47.8,112.4,47.8z M110.9,36.7c-1.5,0-2.1,0.6-2.6,2.5 l-0.3,1.2l-0.8,3.3c-0.2,0.7-0.3,1.5-0.3,2.1c0,0.8,0.3,1,1.6,1h3.9c1.8,0,2.1-0.4,2.5-1.9l0.3-1h-2.7l-0.3,1.2h-2.5l0.1-0.6 c0.1-0.5,0.2-0.9,0.3-1.3l0.3-1.2h5l0.9-3.5c0.1-0.3,0.1-0.5,0.1-0.7c0-0.8-0.4-1-1.7-1H110.9z M111,44.1h0.4l0.3-1.1h-0.4 l-0.1,0.4C111.1,43.7,111,43.9,111,44.1z M113.2,41h-2.4l0.1-0.6c0.1-0.8,0.2-1,0.4-1.7l0.1-0.3h2.4L113.2,41z M112,40h0.4l0.1-0.6 h-0.4C112.1,39.6,112,39.7,112,40z"></path> <path class="lhdr1" d="M122.1,47.8h-3.4c-2.2,0-2.5-1.4-2.5-2c0-0.6,0.2-1.8,0.4-2.5l0.9-3.6c0.7-2.7,1.3-4,4.1-4h3.1 c0.9,0,2.8,0,2.8,2c0,0.3-0.1,0.6-0.1,0.9l-0.6,2.3h-4.4l0.3-1.2h-0.3c-0.4,1.4-0.8,3-1,4.1h0.3l0.3-1.1h4.5l-0.6,2.3 c-0.2,0.8-0.5,1.7-1.6,2.4C123.6,47.8,122.8,47.8,122.1,47.8z M121.6,36.7c-1.9,0-2.4,0.5-3.1,3.3l-0.9,3.6 c-0.2,0.6-0.4,1.7-0.4,2.2c0,0.3,0,1,1.5,1h3.4c0.7,0,1.2,0,1.7-0.3c0.8-0.4,1-1.1,1.1-1.7l0.3-1.1h-2.5l-0.3,1.1h-2.3l0.1-0.6 c0.2-1.3,0.7-3.4,1.3-5.2l0.1-0.4h2.3l-0.3,1.2h2.3l0.4-1.5c0.1-0.2,0.1-0.4,0.1-0.7c0-0.8-0.4-1-1.8-1H121.6z"></path> <path class="lhdr1" d="M132.3,47.8h-3.9c-0.8,0-2.6,0-2.6-2c0-0.7,0.2-1.6,0.4-2.3l1.1-4.5c0.5-1.9,1.3-3.2,3.6-3.2h3.7 c0.8,0,2.7,0,2.7,2c0,0.3,0,0.6-0.1,1l-1,4.1h0.2l-0.6,2.2C135.2,47,134.6,47.8,132.3,47.8z M130.8,36.7c-1.5,0-2.1,0.6-2.6,2.5 l-0.3,1.2l-0.8,3.3c-0.2,0.7-0.3,1.5-0.3,2.1c0,0.8,0.3,1,1.6,1h3.9c1.8,0,2.1-0.4,2.5-1.9l0.3-1h-2.7l-0.3,1.2h-2.5l0.1-0.6 c0.1-0.5,0.2-0.9,0.3-1.3l0.3-1.2h5l0.9-3.5c0.1-0.3,0.1-0.5,0.1-0.7c0-0.8-0.4-1-1.7-1H130.8z M130.8,44.1h0.4l0.3-1.1H131 l-0.1,0.4C130.9,43.7,130.8,43.9,130.8,44.1z M133,41h-2.4l0.1-0.6c0.1-0.8,0.2-1,0.4-1.7l0.1-0.3h2.4L133,41z M131.8,40h0.4 l0.1-0.6h-0.4C131.9,39.6,131.8,39.7,131.8,40z"></path> <path class="lhdr1" d="M147.5,47.8h-5.9l2-8.1h-0.9l-2,8.1h-4.9l2-8.1h-0.9l1-4h5.8l-0.2,0.9l1.1-0.9h1.5c1.8,0,2.7,0.6,2.7,1.9 c0,0.4-0.1,0.9-0.3,1.7l-1.1,4.5h1.1L147.5,47.8z M142.9,46.8h3.8l0.5-2h-1.1l1.4-5.7c0.2-0.7,0.2-1.2,0.2-1.5 c0-0.5-0.3-0.9-1.7-0.9H145l-2.5,2h2.4L142.9,46.8z M137.2,46.8h2.8l1.9-7.6l0,0l0.6-2.5h-3.8l-0.5,2h0.9L137.2,46.8z"></path> <path class="lhdr1" d="M153.6,47.8h-3.8c-0.7,0-1.2-0.2-1.5-0.5c-0.2-0.2-0.3-0.5-0.2-1l0.1-0.5l1.5-6.1h-1l1-4h1L151,34l4.8,0 l-0.4,1.7h1.1l-1,4h-1.1l-1,4.1h1.1L153.6,47.8z M149.9,38.7h1l-1.9,7.7c0,0,0,0.1,0,0.2c0,0,0.1,0.1,0.7,0.1h3.1l0.5-2h-1.1 l1.5-6.1h1.1l0.5-2h-1.1l0.4-1.7l-2.8,0l-0.4,1.7h-1L149.9,38.7z"></path> <path class="lhdr1" d="M160.7,47.8h-3.9c-0.8,0-2.6,0-2.6-2c0-0.7,0.2-1.6,0.4-2.3l1.1-4.5c0.5-1.9,1.3-3.2,3.6-3.2h3.7 c0.8,0,2.7,0,2.7,2c0,0.3,0,0.6-0.1,1l-1,4.1h0.2l-0.6,2.2C163.7,47,163.1,47.8,160.7,47.8z M159.3,36.7c-1.5,0-2.1,0.6-2.6,2.5 l-0.3,1.2l-0.8,3.3c-0.2,0.7-0.3,1.5-0.3,2.1c0,0.8,0.3,1,1.6,1h3.9c1.8,0,2.1-0.4,2.5-1.9l0.3-1h-2.7l-0.3,1.2H158l0.1-0.6 c0.1-0.5,0.2-0.9,0.3-1.3l0.3-1.2h5l0.9-3.5c0.1-0.3,0.1-0.5,0.1-0.7c0-0.8-0.4-1-1.7-1H159.3z M159.3,44.1h0.4L160,43h-0.4 l-0.1,0.4C159.4,43.7,159.3,43.9,159.3,44.1z M161.5,41h-2.4l0.1-0.6c0.1-0.8,0.2-1,0.4-1.7l0.1-0.3h2.4L161.5,41z M160.3,40h0.4 l0.1-0.6h-0.4C160.4,39.6,160.3,39.7,160.3,40z"></path> <path class="lhdr1" d="M170.5,47.8h-7l1-4h1l1-4.1h-1l1-4h6l-0.1,0.4l0.5-0.4h0.8c1.9,0,2.2,1,2.2,1.7c0,0.3,0,0.6-0.1,0.9l-0.8,3.3 h-3.5l0.5-1.9h-0.3l-1,4.1h1.1L170.5,47.8z M164.8,46.8h4.9l0.5-2h-1.1l1.4-5.8l0,0l0.6-2.3h-3.9l-0.5,2h1l-1.5,6.1h-1L164.8,46.8z M172.6,40.6h1.4l0.6-2.6c0.1-0.2,0.1-0.4,0.1-0.6c0-0.3-0.1-0.7-1.2-0.7h-0.4l-2.2,2h2.1L172.6,40.6z"></path> </g> <g> <path class="lhdr4" d="M62.5,36.2l-0.8,3.4h-3.5l0.2-0.7h-1.9l-0.3,1l3.4,1c0.9,0.2,1.4,0.5,1.4,1.2c0,0.3-0.1,0.9-0.2,1.2l-0.3,1.4 c-0.1,0.6-0.3,1.1-0.5,1.5c-0.7,1.1-1.8,1.2-2.5,1.2h-6.9l0.9-3.4h3.8l-0.2,0.8h1.7l0.3-1.3l-3.8-0.9c-0.9-0.2-1.2-0.4-1.2-1 c0-0.3,0.1-0.6,0.2-0.9l0.4-1.4c0.6-2.3,1.2-2.8,3.1-2.8H62.5z"></path> <path class="lhdr4" d="M71,43.4L70.6,45c-0.4,1.7-0.9,2.3-2.9,2.3h-3.9c-1,0-2.1-0.1-2.1-1.5c0-0.8,0.3-1.9,0.5-2.7l0.7-2.9l0.3-1.2 c0.5-2,1.2-2.8,3.1-2.8h3.7c1.1,0,2.2,0.1,2.2,1.5c0,0.3,0,0.6-0.1,0.8L71,42.5h-5c-0.2,0.9-0.3,1.4-0.5,2.1H67l0.3-1.2H71z M66.9,38.9c-0.2,0.6-0.3,0.8-0.4,1.6H68l0.4-1.6H66.9z"></path> <path class="lhdr4" d="M77.7,39.2l-1.2,5.1h1.1l-0.7,3h-6l0.7-3h1l1.2-5.1h-1l0.7-3h4.9l-0.3,1.4l1.5-1.4h0.7c0.5,0,1.7,0,1.7,1.2 c0,0.3,0,0.5-0.1,0.8l-0.7,2.9h-2.6l0.5-1.9H77.7z"></path> <path class="lhdr4" d="M92.6,36.2l-0.7,3h-0.6l-3.5,8.1h-5.3l0.4-8.1h-0.5l0.7-3h3.6l-0.8,8l3.1-8H92.6z"></path> <path class="lhdr4" d="M97.8,36.2l-2,8.1h0.9l-0.7,3h-5.7l0.7-3H92l1.2-5.1h-1l0.7-3H97.8z M96.5,31.4c0.9,0,1.7,0.8,1.7,1.7 c0,0.9-0.8,1.7-1.7,1.7c-0.9,0-1.7-0.8-1.7-1.7C94.8,32.2,95.6,31.4,96.5,31.4z"></path> <path class="lhdr4" d="M106.2,43.2l-0.4,1.7c-0.2,0.7-0.4,1.5-1.4,2c-0.6,0.4-1.3,0.4-2,0.4H99c-0.7,0-2-0.1-2-1.5 c0-0.6,0.2-1.7,0.4-2.4l0.9-3.6c0.7-2.8,1.2-3.7,3.6-3.7h3.1c1.1,0,2.3,0,2.3,1.5c0,0.4-0.1,0.7-0.2,1l-0.4,1.7h-3.4l0.3-1.2h-1.3 c-0.5,1.6-1,3.8-1.2,5.1h1.3l0.3-1.1H106.2z"></path> <path class="lhdr4" d="M115.8,43.4l-0.4,1.6c-0.4,1.7-0.9,2.3-2.9,2.3h-3.9c-1,0-2.1-0.1-2.1-1.5c0-0.8,0.3-1.9,0.5-2.7l0.7-2.9 l0.3-1.2c0.5-2,1.2-2.8,3.1-2.8h3.7c1.1,0,2.2,0.1,2.2,1.5c0,0.3,0,0.6-0.1,0.8l-0.9,3.9h-5c-0.2,0.9-0.3,1.4-0.5,2.1h1.4l0.3-1.2 H115.8z M111.8,38.9c-0.2,0.6-0.3,0.8-0.4,1.6h1.4l0.4-1.6H111.8z"></path> <path class="lhdr0" d="M125.9,43.2l-0.4,1.7c-0.2,0.7-0.4,1.5-1.4,2c-0.6,0.4-1.3,0.4-2,0.4h-3.4c-0.7,0-2-0.1-2-1.5 c0-0.6,0.2-1.7,0.4-2.4l0.9-3.6c0.7-2.8,1.2-3.7,3.6-3.7h3.1c1.1,0,2.3,0,2.3,1.5c0,0.4-0.1,0.7-0.2,1l-0.4,1.7h-3.4l0.3-1.2H122 c-0.5,1.6-1,3.8-1.2,5.1h1.3l0.3-1.1H125.9z"></path> <path class="lhdr0" d="M135.6,43.4l-0.4,1.6c-0.4,1.7-0.9,2.3-2.9,2.3h-3.9c-1,0-2.1-0.1-2.1-1.5c0-0.8,0.3-1.9,0.5-2.7l0.7-2.9 l0.3-1.2c0.5-2,1.2-2.8,3.1-2.8h3.7c1.1,0,2.2,0.1,2.2,1.5c0,0.3,0,0.6-0.1,0.8l-0.9,3.9h-5c-0.2,0.9-0.3,1.4-0.5,2.1h1.4l0.3-1.2 H135.6z M131.6,38.9c-0.2,0.6-0.3,0.8-0.4,1.6h1.4l0.4-1.6H131.6z"></path> <path class="lhdr0" d="M143.1,36.2l-0.4,1.7l2.1-1.7h1.4c0.8,0,2.2,0.1,2.2,1.4c0,0.4-0.1,1.1-0.3,1.6l-1.3,5.1h1.1l-0.7,3h-4.8 l2-8.1h-1.9l-2,8.1h-3.9l2-8.1h-0.9l0.7-3H143.1z"></path> <path class="lhdr0" d="M155.9,36.2l-0.7,3h-1.1l-1.2,5.1h1.1l-0.7,3h-3.4c-1,0-1.3-0.3-1.2-0.9l0.1-0.5l1.7-6.7h-1l0.7-3h1l0.4-1.7 l3.8,0l-0.4,1.7H155.9z"></path> <path class="lhdr0" d="M164.1,43.4l-0.4,1.6c-0.4,1.7-0.9,2.3-2.9,2.3h-3.9c-1,0-2.1-0.1-2.1-1.5c0-0.8,0.3-1.9,0.5-2.7l0.7-2.9 l0.3-1.2c0.5-2,1.2-2.8,3.1-2.8h3.7c1.1,0,2.2,0.1,2.2,1.5c0,0.3,0,0.6-0.1,0.8l-0.9,3.9h-5c-0.2,0.9-0.3,1.4-0.5,2.1h1.4l0.3-1.2 H164.1z M160.1,38.9c-0.2,0.6-0.3,0.8-0.4,1.6h1.4l0.4-1.6H160.1z"></path> <path class="lhdr0" d="M171,39.2l-1.2,5.1h1.1l-0.7,3h-6l0.7-3h1l1.2-5.1h-1l0.7-3h4.9l-0.3,1.4l1.5-1.4h0.6c0.5,0,1.7,0,1.7,1.2 c0,0.3,0,0.5-0.1,0.8l-0.7,2.9h-2.5l0.5-1.9H171z"></path> </g> <g> <path class="lhdr2" d="M72.8,53c-1.1,0-2,0.1-2.8,1c-0.9,1-1,1.9-1.3,3.1l-1.1,4.1c-0.2,0.7-0.4,1.5-0.4,2.2c0,1.7,1.4,1.9,2.5,1.9 H72c0.9,0,1.7-0.1,2.6-0.6c0.8-0.6,1.1-1.3,1.5-3.1l1.1-4.5c0.2-0.6,0.3-1.3,0.5-2c0-0.2,0.1-0.4,0.1-0.6c0-0.5-0.2-0.9-0.6-1.1 C76.6,53,75.8,53,75.2,53H72.8L72.8,53z M74.4,55.6c-0.3,1-1.6,6.5-1.8,7.1h-1.8c0.4-1.8,1.3-5.7,1.8-7.1H74.4L74.4,55.6z"></path> <path class="lhdr2" d="M86.8,55.4c0.1-0.3,0.1-0.6,0.1-0.9c0-1.3-1.2-1.5-2-1.5h-2.6c-1.4,0-2.1,0.1-2.8,0.9 c-0.5,0.5-0.6,0.9-0.8,1.5l-0.3,1.3c-0.1,0.5-0.1,0.8-0.1,1.1c0,0.8,0.6,1,1.1,1.2c-1.4,0.5-1.9,0.9-2.3,2.3l-0.4,1.6 c-0.1,0.3-0.1,0.5-0.1,0.8c0,0.7,0.3,1.1,0.6,1.2c0.5,0.3,1.5,0.3,2.1,0.3h2c1.3,0,2.3-0.1,3.1-1.1c0.4-0.5,0.5-0.9,0.7-1.4 l0.4-1.4c0.1-0.3,0.1-0.6,0.1-0.8c0-1.1-0.8-1.4-1.3-1.5c1.5-0.6,1.8-1.3,2-2.1L86.8,55.4L86.8,55.4z M81.8,55.6h1.9l-0.6,2.2h-1.9 L81.8,55.6L81.8,55.6z M80.7,60.2h1.9l-0.6,2.5h-1.9L80.7,60.2L80.7,60.2z"></path> <polygon class="lhdr4" points="87.1,58.7 86.7,60.4 90.5,60.4 90.9,58.7 87.1,58.7 "></polygon> <path class="lhdr4" d="M93.5,53l-1.6,6.5h4.9L96,62.7h-2l0.4-1.7h-3.2l-0.4,1.5c-0.1,0.3-0.2,0.7-0.2,1c0,1.7,1.8,1.7,2.8,1.7h1.7 c1,0,2.5,0,3.4-1.2c0.4-0.6,0.6-1.4,0.8-2l0.5-2c0.1-0.6,0.3-1.2,0.3-1.8c0-1.4-1-1.4-2-1.5h-2.5l0.3-1.3h5l0.6-2.5H93.5L93.5,53z"></path> <polygon class="lhdr4" points="102.2,53 101.2,57.1 104.2,57.1 104.5,55.6 106.7,55.6 100.6,65.2 104.3,65.2 110.4,54.9 110.8,53 102.2,53 "></polygon> <path class="lhdr2" d="M114.2,53c-1.1,0-2,0.1-2.8,1c-0.9,1-1,1.9-1.3,3.1l-1.1,4.1c-0.2,0.7-0.4,1.5-0.4,2.2c0,1.7,1.4,1.9,2.5,1.9 h2.2c0.9,0,1.7-0.1,2.6-0.6c0.8-0.6,1.1-1.3,1.5-3.1l1.1-4.5c0.2-0.6,0.3-1.3,0.5-2c0-0.2,0.1-0.4,0.1-0.6c0-0.5-0.2-0.9-0.6-1.1 c-0.5-0.3-1.3-0.3-1.9-0.3H114.2L114.2,53z M115.8,55.6c-0.3,1-1.6,6.5-1.8,7.1h-1.8c0.4-1.8,1.3-5.7,1.8-7.1H115.8L115.8,55.6z"></path> <path class="lhdr4" d="M126.3,62.7l4.2-3.7l0.8-3.2c0.1-0.3,0.2-0.7,0.2-1c0-0.6-0.2-1-0.5-1.3c-0.5-0.4-1-0.4-1.5-0.5h-3.1 c-0.7,0-1.6,0-2.5,0.9c-0.5,0.6-0.7,1.1-0.9,1.6l-0.6,2.3h3.1l0.6-2.3h2l-0.7,2.7l-6.1,5.2l-0.4,1.7h8.5l0.6-2.5H126.3L126.3,62.7z "></path> <polygon class="lhdr4" points="132.8,53 131.8,57.1 134.8,57.1 135.2,55.6 137.3,55.6 131.3,65.2 135,65.2 141,54.9 141.5,53 132.8,53 "></polygon> <path class="lhdr2" d="M149.6,55.4c0.1-0.3,0.1-0.6,0.1-0.9c0-1.3-1.2-1.5-2-1.5h-2.6c-1.4,0-2.1,0.1-2.8,0.9 c-0.5,0.5-0.6,0.9-0.8,1.5l-0.3,1.3c-0.1,0.5-0.1,0.8-0.1,1.1c0,0.8,0.6,1,1.1,1.2c-1.4,0.5-1.9,0.9-2.3,2.3l-0.4,1.6 c-0.1,0.3-0.1,0.5-0.1,0.8c0,0.7,0.3,1.1,0.6,1.2c0.5,0.3,1.5,0.3,2.1,0.3h2c1.3,0,2.3-0.1,3.1-1.1c0.4-0.5,0.5-0.9,0.7-1.4 l0.4-1.4c0.1-0.3,0.1-0.6,0.1-0.8c0-1.1-0.8-1.4-1.3-1.5c1.5-0.6,1.8-1.3,2-2.1L149.6,55.4L149.6,55.4z M144.6,55.6h1.9l-0.6,2.2 H144L144.6,55.6L144.6,55.6z M143.4,60.2h1.9l-0.6,2.5h-1.9L143.4,60.2L143.4,60.2z"></path> <path class="lhdr2" d="M157.5,53c-1.1,0-2,0.1-2.8,1c-0.9,1-1,1.9-1.3,3.1l-1.1,4.1c-0.2,0.7-0.4,1.5-0.4,2.2c0,1.7,1.4,1.9,2.5,1.9 h2.2c0.9,0,1.7-0.1,2.6-0.6c0.8-0.6,1.1-1.3,1.5-3.1L162,57c0.2-0.6,0.3-1.3,0.5-2c0-0.2,0.1-0.4,0.1-0.6c0-0.5-0.2-0.9-0.6-1.1 c-0.5-0.3-1.3-0.3-1.9-0.3H157.5L157.5,53z M159.1,55.6c-0.3,1-1.6,6.5-1.8,7.1h-1.8c0.4-1.8,1.3-5.7,1.8-7.1H159.1L159.1,55.6z"></path> <path class="lhdr2" d="M166.9,53c-1.1,0-2,0.1-2.8,1c-0.9,1-1,1.9-1.3,3.1l-1.1,4.1c-0.2,0.7-0.4,1.5-0.4,2.2c0,1.7,1.4,1.9,2.5,1.9 h2.2c0.9,0,1.7-0.1,2.6-0.6c0.8-0.6,1.1-1.3,1.5-3.1l1.1-4.5c0.2-0.6,0.3-1.3,0.5-2c0-0.2,0.1-0.4,0.1-0.6c0-0.5-0.2-0.9-0.6-1.1 c-0.5-0.3-1.3-0.3-1.9-0.3H166.9L166.9,53z M168.5,55.6c-0.3,1-1.6,6.5-1.8,7.1h-1.8c0.4-1.8,1.3-5.7,1.8-7.1H168.5L168.5,55.6z"></path> </g> </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#verkstader">Verkstäder</a></li>
+        <li><a href="#tjanster">Tjänster</a></li>
+        <li><a href="#om">Om oss</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <a href="tel:+4685702780" class="nav-phone">
+          <span class="nav-phone-dot"></span>
+          08-570 278 00
+        </a>
+        <a href="#boka" class="btn btn-primary">
+          Boka verkstad
+          <svg class="btn-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">
+          Sedan 2001 · Värmdö &amp; Haninge
+        </div>
+        <h1>
+          Din bil i<br>
+          <span class="strike">trygga</span> händer.
+        </h1>
+        <p class="hero-lede">
+          Personlig bilverkstad i Gustavsberg och Vega. Auktoriserade för Chevrolet, Citroën, Isuzu, Subaru och Suzuki — vi servar de flesta andra också.
+        </p>
+        <div class="hero-cta">
+          <a href="#boka" class="btn btn-primary">
+            Boka verkstad
+            <svg class="btn-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+          </a>
+          <a href="tel:+4685702780" class="btn btn-ghost">
+            Ring 08-570 278 00
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-visual-photo">[ Workshop photo ]</div>
+        <div class="hero-visual-overlay">
+          <div class="hero-visual-stat">
+            <div class="hero-visual-stat-num">4,9</div>
+            <div class="hero-visual-stat-label">/5 på Reco · 90+ recensioner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item">Auktoriserad Chevrolet <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Auktoriserad Citroën <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Auktoriserad Isuzu <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Auktoriserad Subaru <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Auktoriserad Suzuki <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Däckhotell <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Bilglas <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Sedan 2001 <span class="ticker-dot"></span></div>
+    <!-- Duplicate for seamless loop -->
+    <div class="ticker-item">Auktoriserad Chevrolet <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Auktoriserad Citroën <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Auktoriserad Isuzu <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Auktoriserad Subaru <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Auktoriserad Suzuki <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Däckhotell <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Bilglas <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Sedan 2001 <span class="ticker-dot"></span></div>
+  </div>
+</div>
+
+<!-- LOCATIONS -->
+<section class="locations" id="verkstader">
+  <div class="container">
+    <div class="section-eyebrow">Våra verkstäder</div>
+    <h2 class="section-title">Två verkstäder. En standard.</h2>
+    <p class="section-lede">
+      Samma personliga service oavsett om du kör in i Gustavsberg eller Vega. Skillnaden ligger i vilka bilmärken vi är auktoriserade för.
+    </p>
+    <div class="locations-grid">
+      <a href="#" class="location-card">
+        <div class="location-photo">[ Gustavsberg verkstad ]</div>
+        <div class="location-tag">→ Värmdö</div>
+        <h3 class="location-name">Gustavsberg</h3>
+        <p class="location-address">
+          Chamottevägen 10, Gustavsbergs hamn<br>
+          Mån–tors 07:30–17:00 · Fre 07:30–15:00
+        </p>
+        <div class="location-brands">
+          <span class="brand-pill">Chevrolet</span>
+          <span class="brand-pill">Subaru</span>
+          <span class="brand-pill">Suzuki</span>
+        </div>
+        <div class="location-cta">
+          Till verkstaden
+          <svg class="location-cta-arrow" width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+        </div>
+      </a>
+      <a href="#" class="location-card">
+        <div class="location-photo">[ Haninge verkstad ]</div>
+        <div class="location-tag">→ Haninge</div>
+        <h3 class="location-name">Vega</h3>
+        <p class="location-address">
+          Lignells väg 5, Vega · enklast från Vegavägen<br>
+          Mån–tors 07:30–17:00 · Fre 07:30–15:00
+        </p>
+        <div class="location-brands">
+          <span class="brand-pill">Citroën</span>
+          <span class="brand-pill">Isuzu</span>
+        </div>
+        <div class="location-cta">
+          Till verkstaden
+          <svg class="location-cta-arrow" width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="tjanster">
+  <div class="container">
+    <div class="section-eyebrow">Tjänster</div>
+    <h2 class="section-title">Vad vi hjälper dig med.</h2>
+    <p class="section-lede">
+      Från årlig service till stenskott och däckhotell — vi tar hand om allt på ett ställe.
+    </p>
+    <div class="services-grid">
+      <div class="service">
+        <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="20" cy="20" r="14"/>
+          <path d="M20 12v8l5 3"/>
+        </svg>
+        <h3 class="service-title">Service &amp; reparation</h3>
+        <p class="service-desc">Lämna på morgonen, hämta på vägen hem. Välutbildade mekaniker, tydlig dialog.</p>
+        <a href="#" class="service-link">
+          Läs mer
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="service">
+        <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="20" cy="20" r="14"/>
+          <circle cx="20" cy="20" r="6"/>
+          <path d="M20 6v4M20 30v4M6 20h4M30 20h4"/>
+        </svg>
+        <h3 class="service-title">Däck &amp; fälgar</h3>
+        <p class="service-desc">Försäljning, montering och däckhotell. Kvalitetsdäck från Michelin, Nokian och Yokohama.</p>
+        <a href="#" class="service-link">
+          Läs mer
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="service">
+        <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="6" y="10" width="28" height="20" rx="2"/>
+          <path d="M14 18l3 3 6-6"/>
+        </svg>
+        <h3 class="service-title">Bilglas</h3>
+        <p class="service-desc">Stenskott, lagning och vindrutebyte. Auktoriserade glasmästare — vi sköter försäkringen åt dig.</p>
+        <a href="#" class="service-link">
+          Läs mer
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="service">
+        <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M8 16l12-8 12 8v16H8z"/>
+          <path d="M16 32V22h8v10"/>
+        </svg>
+        <h3 class="service-title">Däckhotell</h3>
+        <p class="service-desc">Vi förvarar dina sommar- och vinterdäck. Du slipper släpa något fram och tillbaka.</p>
+        <a href="#" class="service-link">
+          Läs mer
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="service">
+        <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 14h28M10 14v16h20V14M14 22h12"/>
+        </svg>
+        <h3 class="service-title">Märkesservice</h3>
+        <p class="service-desc">Auktoriserad för fem märken. Originalverktyg, alla garantireparationer, behåll nybilsgarantin.</p>
+        <a href="#" class="service-link">
+          Läs mer
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="service">
+        <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 24l4-10h20l4 10v6H6z"/>
+          <circle cx="14" cy="30" r="3"/>
+          <circle cx="26" cy="30" r="3"/>
+        </svg>
+        <h3 class="service-title">Försäkringsärenden</h3>
+        <p class="service-desc">Vi hjälper dig genom hela processen — från skadeanmälan till färdig bil.</p>
+        <a href="#" class="service-link">
+          Läs mer
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST / STATS -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-grid">
+      <div>
+        <div class="section-eyebrow" style="color: rgba(255,255,255,0.5);">I siffror</div>
+        <h2 class="trust-headline">
+          25 år av <span class="accent">personlig service</span>.
+        </h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-num">2001</div>
+          <div class="stat-label">Året vi öppnade</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4,9<span class="small">/5</span></div>
+          <div class="stat-label">Reco-betyg</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">5</div>
+          <div class="stat-label">Bilmärken vi är auktoriserade för</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Verkstäder — Värmdö &amp; Haninge</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">90<span class="small">+</span></div>
+          <div class="stat-label">Recensioner på Google</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4,6<span class="small">/5</span></div>
+          <div class="stat-label">Google-betyg</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="container">
+    <div class="section-eyebrow">Kunder</div>
+    <div class="reviews-header">
+      <div>
+        <h2 class="section-title" style="margin-bottom: 16px;">Det säger inte vi.<br>Det säger 90+ kunder.</h2>
+        <div class="reviews-rating">
+          <div class="stars">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="reviews-rating-text"><strong>4,9</strong> på Reco · <strong>4,6</strong> på Google</span>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review">
+        <div class="review-stars stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-quote">
+          Ringde 16:00 och Fredrik bad mig komma dagen efter. Pontus felsökte, och klockan 14:00 kunde jag hämta bilen. Snabbt, personligt och precis när jag behövde det.
+        </p>
+        <div class="review-attr">
+          <span>Kund i Gustavsberg</span>
+          <span class="review-source">Google</span>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-stars stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-quote">
+          Lämnade min Suzuki på service. Inga ballonger, inga fyrverkerier — bara vardag. Sex månader senare är det fortfarande inget konstigt med bilen. Det är så det ska vara.
+        </p>
+        <div class="review-attr">
+          <span>Kund i Gustavsberg</span>
+          <span class="review-source">Google</span>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-stars stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-quote">
+          Vi lämnar alla våra bilar här. Man får alltid bra bemötande och priserna är rimliga. Kan de inte, säger de det i förväg så det inte blir onödigt jobb.
+        </p>
+        <div class="review-attr">
+          <span>Kund i Vega</span>
+          <span class="review-source">Google</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="brands">
+  <div class="container">
+    <div class="brands-label">Auktoriserade verkstäder för</div>
+    <div class="brands-row">
+      <div class="brand-logo"><img src="Chevrolet.png" alt="Chevrolet"></div>
+      <div class="brand-logo"><img src="Citroen.png" alt="Citroën"></div>
+      <div class="brand-logo"><img src="Isuzu.png" alt="Isuzu"></div>
+      <div class="brand-logo"><img src="Subaru.png" alt="Subaru"></div>
+      <div class="brand-logo"><img src="Suzuki.png" alt="Suzuki"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="boka">
+  <div class="container">
+    <div class="cta-grid">
+      <div>
+        <h2 class="cta-headline">Dags<br>att boka?</h2>
+      </div>
+      <div class="cta-content">
+        <p>
+          Det enklaste är att ringa eller komma förbi — vi tittar på bilen tillsammans och bokar in det som behöver göras. Du kan också skicka en bokningsförfrågan så hör vi av oss.
+        </p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-on-orange">
+            Boka verkstad
+            <svg class="btn-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+          </a>
+          <a href="tel:+4685702780" class="btn btn-on-orange-ghost">
+            Ring 08-570 278 00
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg class="footer-logo-img" aria-label="Dannevall Servicecenter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="logo-footer" x="0px" y="0px" viewBox="0 0 190.2 75.8" style="enable-background:new 0 0 190.2 75.8;" xml:space="preserve"> <style type="text/css"> .lhdr0{fill:#DE9529;} .lhdr1{fill:#222221;} .lhdr2{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;} .lhdr3{fill-rule:evenodd;clip-rule:evenodd;fill:#DE9529;} .lhdr4{fill:#FFFFFF;} </style> <path class="lhdr0" d="M188.5,3.1C187.4,1.8,185.8,1,184,1H23.8c-2.6,0-4.8,1.7-5.5,4.2c-0.3,1.1-3.4,14-4.6,18.6 C5.8,28.9,1,37.7,1,47.1c0,15.1,12.3,27.5,27.5,27.5c9.2,0,21.2-4.9,26-18.6H61c-0.9,3.7-2.4,9.7-2.6,10.6c-0.4,1.7,0,3.5,1,4.8 c1.1,1.4,2.7,2.2,4.4,2.2h107c2.6,0,4.9-1.7,5.5-4.2c0.1-0.4,1.6-7.5,7.8-36.4c2.7-12.6,5.2-24.5,5.4-25.1 C190,6.2,189.6,4.5,188.5,3.1z"></path> <path class="lhdr1" d="M186.2,4.9c-0.5-0.7-1.3-1.1-2.2-1.1H23.8c-1.3,0-2.3,0.8-2.7,2.2c-0.3,1.2-4.2,17.1-4.8,19.7 C8.6,30.1,3.9,38.3,3.9,47.1c0,13.6,11,24.6,24.6,24.6c8.6,0,20-4.9,23.9-18.6h11.4c0.2,0,0.6,0,0.7,0.2c0.1,0.2,0.1,0.5,0.1,0.5 c0,0-2.9,12-3.3,13.4c-0.2,0.8,0,1.7,0.5,2.4c0.5,0.7,1.3,1.1,2.2,1.1h107c1.3,0,2.4-0.8,2.7-2.1c0.1-0.4,3.3-15.3,7.8-36.3 c2.7-12.7,5.3-24.7,5.4-25.1C187,6.4,186.8,5.6,186.2,4.9z"></path> <g> <path class="lhdr2" d="M9.9,47c0-10.2,8.3-18.6,18.6-18.6S47,36.8,47,47s-8.3,18.6-18.6,18.6S9.9,57.3,9.9,47L9.9,47z M17.4,47 c0-6.1,4.9-11,11-11c6.1,0,11,4.9,11,11c0,6.1-4.9,11-11,11C22.4,58.1,17.4,53.1,17.4,47L17.4,47z"></path> <path class="lhdr2" d="M32.4,38.6c0.2-0.3,1.1-0.2,1.9,0.4c0.8,0.6,1.3,1.4,0.9,1.7l-4.8,4.6c-0.2,0.2-0.5,0.2-0.7,0 c-0.2-0.2-0.3-0.4-0.2-0.7L32.4,38.6L32.4,38.6z M36.6,42.6c0.3-0.2,1,0.5,1.3,1.4c0.3,0.9,0.2,1.9-0.2,1.9L31,46.8 c-0.3,0-0.5-0.1-0.6-0.4c-0.1-0.3,0-0.5,0.3-0.6L36.6,42.6L36.6,42.6z M37.6,48.2c0.4,0.1,0.5,1,0.2,1.9c-0.3,0.9-0.9,1.6-1.3,1.4 l-5.9-3.2c-0.2-0.1-0.3-0.4-0.3-0.6c0.1-0.3,0.3-0.4,0.6-0.4L37.6,48.2L37.6,48.2z M35.2,53.4c0.3,0.3-0.2,1.1-0.9,1.7 c-0.8,0.6-1.7,0.8-1.9,0.4l-2.9-6c-0.1-0.2,0-0.5,0.2-0.7c0.2-0.2,0.5-0.1,0.7,0L35.2,53.4L35.2,53.4z M30.2,56.1 c0.1,0.4-0.8,0.8-1.8,0.8c-1,0-1.8-0.4-1.8-0.8l1.2-6.6c0-0.3,0.3-0.5,0.5-0.5c0.3,0,0.5,0.2,0.5,0.5L30.2,56.1L30.2,56.1z M24.5,55.4c-0.2,0.3-1.1,0.2-1.9-0.4c-0.8-0.6-1.3-1.4-0.9-1.7l4.8-4.6c0.2-0.2,0.5-0.2,0.7-0.1c0.2,0.2,0.3,0.4,0.2,0.7 L24.5,55.4L24.5,55.4z M20.3,51.5c-0.3,0.2-1-0.5-1.3-1.4c-0.3-0.9-0.2-1.9,0.2-1.9l6.6-0.9c0.3,0,0.5,0.1,0.6,0.4 c0.1,0.3,0,0.5-0.3,0.6L20.3,51.5L20.3,51.5z M19.3,45.9c-0.4-0.1-0.5-1-0.2-1.9c0.3-0.9,0.9-1.6,1.3-1.4l5.9,3.2 c0.2,0.1,0.3,0.4,0.3,0.6c-0.1,0.3-0.3,0.4-0.6,0.4L19.3,45.9L19.3,45.9z M21.7,40.7c-0.3-0.3,0.2-1.1,0.9-1.7 c0.8-0.6,1.7-0.8,1.9-0.4l2.9,6c0.1,0.2,0,0.5-0.2,0.7c-0.2,0.2-0.5,0.1-0.7-0.1L21.7,40.7L21.7,40.7z M26.7,37.9 c-0.1-0.4,0.8-0.8,1.8-0.8c1,0,1.8,0.4,1.8,0.8L29,44.5c0,0.3-0.3,0.5-0.5,0.5c-0.3,0-0.5-0.2-0.5-0.5L26.7,37.9L26.7,37.9z M27.2,47c0-0.7,0.6-1.3,1.3-1.3s1.3,0.6,1.3,1.3c0,0.7-0.6,1.3-1.3,1.3S27.2,47.7,27.2,47L27.2,47z M18.2,47 c0-5.7,4.6-10.2,10.2-10.2c5.7,0,10.2,4.6,10.2,10.2c0,5.7-4.6,10.2-10.2,10.2C22.8,57.3,18.2,52.7,18.2,47L18.2,47z"></path> </g> <g> <path class="lhdr1" d="M61.1,27.7l2.3-9.1l0-0.1c0.1-0.4,0.2-0.8,0.2-1.3c0-1.4-0.7-3.2-3.9-3.2l-8.3,0c-4.2,0.3-4.8,2.7-5.4,4.8 l-0.7,2.8h6.9l0.6-2.2h2.8L54.9,22h-4.9c-4.4,0-5.3,1.8-5.9,4.1l-0.8,3.3c-0.1,0.6-0.2,1.1-0.2,1.6c0,1.4,0.7,2.1,1.3,2.4 c0.7,0.3,1.4,0.3,2,0.3c0,0,0,0,0.1,0h3.7l2.2-1.5L52,33.7h9.2l1.5-6H61.1z M60.5,32.7h-7.2l0.7-2.9l-4,2.9h-3.5 c-0.5,0-1.1,0-1.6-0.2c-0.3-0.2-0.8-0.5-0.8-1.5c0-0.5,0-0.9,0.1-1.4l0.8-3.3c0.5-2,1.2-3.3,4.9-3.3h5.7l1.1-4.6h-4.8l-0.6,2.2 h-4.8l0.4-1.6c0.5-2.1,1-3.9,4.4-4.1h8.2c2,0,2.9,0.7,2.9,2.2c0,0.4-0.1,0.7-0.1,1.2l-2.6,10.4h1.7L60.5,32.7z"></path> <path class="lhdr1" d="M45.4,15.9c0.2-1,0.3-1.2,0.3-1.4c0,0,0-0.1,0-0.1c0.1-0.4,0.1-0.6,0.1-0.7c0,0,0-0.1,0-0.2 c0.1-0.3,0.5-3.2-2.2-4.5c-1-0.5-2-0.6-4.6-0.6H25.8l-1.6,6.5h1.8l-3,11.9h-1.8l-1.7,6.8h0.6h13.5c6.5-0.1,7.9-2.2,9.9-10.4 L45.4,15.9z M33.6,32.7H20.8l1.2-4.8h1.8l3.5-13.9h-1.8l1.1-4.5H39c2.4,0,3.3,0.1,4.2,0.5c2,0.9,1.7,3.1,1.6,3.4 c0,0.2-0.1,0.4-0.1,0.6c0,0.1,0,0.2-0.1,0.3c0,0.2-0.1,0.3,0,0.4c0,0.1-0.1,0.4-0.2,1l-1.9,7.4C40.5,31.3,39.4,32.6,33.6,32.7z"></path> <path class="lhdr1" d="M49.2,29.2h4.9l0.9-3.8h-4.9L49.2,29.2z M50.9,26.4h2.8l-0.4,1.8h-2.9L50.9,26.4z"></path> <path class="lhdr1" d="M29.8,27.8h5l0.1-0.4c1.2-4.3,2.5-9.4,3.1-12.9l0.1-0.6h-4.9L29.8,27.8z M37,14.9c-0.6,3.4-1.8,7.9-2.9,11.9 h-3l3-11.9H37z"></path> <path class="lhdr1" d="M143.3,29.2h4.9l0.9-3.8h-4.9L143.3,29.2z M145,26.4h2.8l-0.4,1.8h-2.9L145,26.4z"></path> <path class="lhdr1" d="M165.8,27.6l4.4-18.8h-9.5l-1.4,6.1h1.8l-2.9,12.7h-1.6l-1.4,6h10.5l1.4-6H165.8z M165,32.7h-8.5l1-4h1.6 l3.4-14.7h-1.8l1-4.1h7.4l-4.4,18.8h1.4L165,32.7z"></path> <path class="lhdr1" d="M155.1,27.7l2.3-9.1l0-0.1c0.1-0.4,0.2-0.8,0.2-1.3c0-1.4-0.7-3.2-3.9-3.2l-8.3,0c-4.2,0.3-4.8,2.7-5.4,4.8 l-0.7,2.8h6.9l0.6-2.2h2.8l-0.6,2.6H144c-4.4,0-5.3,1.8-5.9,4.1l-0.8,3.3c-0.1,0.6-0.2,1.1-0.2,1.6c0,1.4,0.7,2.1,1.3,2.4 c0.7,0.3,1.4,0.3,2,0.3c0,0,0,0,0.1,0h3.7l2.2-1.5l-0.4,1.5h8.8l1.5-6H155.1z M154.2,32.7h-6.8l0.7-2.9l-4,2.9h-3.5 c-0.5,0-1.1,0-1.6-0.2c-0.3-0.2-0.8-0.5-0.8-1.5c0-0.5,0-0.9,0.1-1.4l0.8-3.3c0.5-2,1.2-3.3,4.9-3.3h5.7l1.1-4.6H146l-0.6,2.2h-4.8 L141,19c0.5-2.1,1-3.9,4.4-4.1h8.2c2,0,2.9,0.7,2.9,2.2c0,0.4-0.1,0.7-0.1,1.2l-2.6,10.4h1.3L154.2,32.7z"></path> <path class="lhdr1" d="M134.3,14l-4.2,10.5l1.1-10.5h-7.7l-1.5,6h1.5l-0.6,13.7h10l8.6-19.7H134.3z M132.2,32.7h-8.3l0.6-13.7h-1.2 l1-4h5.8l-1.4,13l1,0.2L135,15h5L132.2,32.7z"></path> <path class="lhdr1" d="M180.9,8.8h-9.5l-1.4,6.1h1.8l-2.9,12.7h-1.6l-1.4,6h10.4l1.4-6h-1.2L180.9,8.8z M175.5,32.7h-8.3l1-4h1.6 l3.4-14.7h-1.8l1-4.1h7.4l-4.4,18.8h1.2L175.5,32.7z"></path> <path class="lhdr1" d="M116.3,18.4h-3.5l-0.1,0.3c-0.4,1.1-0.5,1.4-0.7,2.8l-0.1,0.6h3.4L116.3,18.4z M114.6,21.1h-1.5 c0.1-0.7,0.2-1.1,0.4-1.7h1.5L114.6,21.1z"></path> <path class="lhdr1" d="M112.9,28.2h-1.5c0.1-0.5,0.2-1,0.4-1.5c0.1-0.3,0.2-0.7,0.3-1.1h8.6l1.7-7l0.1-0.3c0.1-0.4,0.1-0.8,0.1-1.2 c0-2.9-2.5-3.1-4.2-3.1h-6.5c-3.7,0-4.9,1.9-5.8,5.2l-0.6,2.1l-1.3,5.6c-0.3,1.2-0.6,2.7-0.6,3.9c0,2.9,2.6,2.9,4.1,3h6.8 c3.9-0.1,4.7-1.3,5.6-4.2l0.9-3.4h-7.4L112.9,28.2z M114.2,27.1h5.4l-0.5,2.1c-0.8,2.6-1.2,3.4-4.6,3.5h-6.8c-1.9,0-3.1-0.2-3.1-2 c0-1.1,0.3-2.5,0.6-3.7l1.3-5.6l0.6-2.1c0.9-3.4,2.1-4.4,4.8-4.4l6.5,0c2,0.1,3.3,0.3,3.3,2.1c0,0.3-0.1,0.6-0.1,1l-1.6,6.5h-8.6 l-0.1,0.4c-0.1,0.6-0.2,1-0.3,1.5c-0.2,0.7-0.3,1.3-0.5,2.2l-0.1,0.6h3.5L114.2,27.1z"></path> <path class="lhdr1" d="M101.7,27.6l2-8c0.3-1.3,0.5-2.2,0.5-2.8c0-2.9-3.2-2.9-4.3-2.9h-2.5l-2.6,2l0.5-2H86l-1.5,6h1.6l-3.4,13.7 h7.7L93.8,20H96l-3.4,13.7h9.4l1.5-6H101.7z M101.2,32.7h-7.4L97.3,19H93l-3.4,13.7h-5.6L87.4,19h-1.6l1-4H94l-0.9,3.6l4.6-3.6h2.2 c2.3,0,3.3,0.5,3.3,1.9c0,0.5-0.1,1.4-0.4,2.5l-2.3,9.3h1.8L101.2,32.7z"></path> <path class="lhdr1" d="M81.2,27.6l2-8c0.3-1.3,0.5-2.2,0.5-2.8c0-2.9-3.2-2.9-4.3-2.9h-2.5l-2.6,2l0.5-2h-9.3L64,20h1.6l-3.4,13.7 h7.7L73.3,20h2.2l-3.4,13.7h9.4l1.5-6H81.2z M80.8,32.7h-7.4L76.8,19h-4.3l-3.4,13.7h-5.6L66.9,19h-1.6l1-4h7.3l-0.9,3.6l4.6-3.6 h2.2c2.3,0,3.3,0.5,3.3,1.9c0,0.8-0.3,2.1-0.4,2.5L80,28.6h1.8L80.8,32.7z"></path> </g> <g> <path class="lhdr3" d="M24.8,14.4h1.8l-3.2,12.9h-1.8l-1.4,5.8h13.5c6.1-0.1,7.4-1.7,9.4-10l1.9-7.4c0.4-1.8,0.2-0.8,0.3-1.5 c0.2-1,0-0.1,0.1-0.9c0.2-0.8,0.2-3-1.9-3.9c-0.9-0.4-1.9-0.6-4.4-0.6H26.1L24.8,14.4L24.8,14.4z M33.7,14.4h3.9 c-0.7,3.9-2,9-3.1,12.9h-4L33.7,14.4L33.7,14.4z"></path> <path class="lhdr3" d="M60.4,28.2l2.4-9.7c0.1-0.4,0.2-0.8,0.2-1.3c0-2.6-2.5-2.7-3.4-2.7h-8.2c-3.8,0.2-4.4,2.3-4.9,4.5l-0.6,2.2 h5.8l0.6-2.2h3.8l-0.8,3.6h-5.3c-4.1,0-4.8,1.6-5.4,3.7l-0.8,3.3c-0.1,0.6-0.2,1-0.2,1.6c0,2.2,1.9,2.2,2.9,2.2h3.6l3.1-2.2 l-0.5,2.2h8.2l1.3-5H60.4L60.4,28.2z M49.8,28.7l0.7-2.8h3.9l-0.7,2.8H49.8L49.8,28.7z"></path> <path class="lhdr0" d="M65.9,14.5l-1.3,5h1.6l-3.4,13.7h6.7l3.4-13.7h3.3l-3.4,13.7h8.4l1.3-5h-1.8l2.2-8.6c0.2-0.8,0.4-1.9,0.4-2.7 c0-2.3-2.4-2.4-3.8-2.4h-2.3l-3.6,2.8l0.7-2.8H65.9L65.9,14.5z"></path> <path class="lhdr0" d="M86.4,14.5l-1.3,5h1.6l-3.4,13.7H90l3.4-13.7h3.3l-3.4,13.7h8.4l1.3-5h-1.8l2.2-8.6c0.2-0.8,0.4-1.9,0.4-2.7 c0-2.3-2.4-2.4-3.8-2.4h-2.3l-3.6,2.8l0.7-2.8H86.4L86.4,14.5z"></path> <path class="lhdr3" d="M113.8,26.6l-0.5,2.1h-2.5c0.3-1.3,0.5-2.1,0.8-3.6h8.6l1.6-6.6c0.1-0.5,0.2-1,0.2-1.4c0-2.4-1.9-2.5-3.7-2.6 h-6.5c-3.2,0-4.4,1.4-5.3,4.8l-0.6,2.1l-1.2,4.9c-0.3,1.2-0.8,3.1-0.8,4.5c0,2.3,1.9,2.4,3.6,2.5h6.8c3.6-0.1,4.2-1,5.1-3.9 l0.7-2.7H113.8L113.8,26.6z M115.7,18.9l-0.7,2.7h-2.5c0.2-1.4,0.3-1.7,0.6-2.7H115.7L115.7,18.9z"></path> <polygon class="lhdr0" points="134.6,14.5 129.2,28 130.6,14.5 123.8,14.5 122.6,19.5 124,19.5 123.3,33.2 132.5,33.2 140.7,14.5 134.6,14.5 "></polygon> <path class="lhdr3" d="M154.5,28.2l2.4-9.7c0.1-0.4,0.2-0.8,0.2-1.3c0-2.6-2.5-2.7-3.4-2.7h-8.2c-3.8,0.2-4.4,2.3-4.9,4.5l-0.6,2.2 h5.8l0.6-2.2h3.8l-0.8,3.6H144c-4.1,0-4.8,1.6-5.4,3.7l-0.8,3.3c-0.1,0.6-0.2,1-0.2,1.6c0,2.2,1.9,2.2,2.9,2.2h3.6l3.1-2.2 l-0.5,2.2h7.8l1.3-5H154.5L154.5,28.2z M143.9,28.7l0.7-2.8h3.9l-0.7,2.8H143.9L143.9,28.7z"></path> <polygon class="lhdr0" points="161.1,9.3 159.9,14.4 161.8,14.4 158.6,28.1 157,28.1 155.8,33.2 165.4,33.2 166.5,28.1 165.2,28.1 169.6,9.3 161.1,9.3 "></polygon> <polygon class="lhdr0" points="171.8,9.3 170.6,14.4 172.4,14.4 169.3,28.1 167.7,28.1 166.5,33.2 175.9,33.2 177.1,28.1 175.8,28.1 180.2,9.3 171.8,9.3 "></polygon> </g> <g> <path class="lhdr1" d="M57.6,47.8H50l1.1-4.4H55l-1.8-0.4c-0.7-0.2-1.6-0.4-1.6-1.5c0-0.4,0.1-0.7,0.2-1l0.4-1.4 c0.7-2.5,1.5-3.2,3.6-3.2h7.3l-1.1,4.4h-3.2l1,0.3c0.6,0.2,1.7,0.5,1.7,1.6c0,0.3-0.1,1-0.2,1.3l-0.3,1.4c-0.1,0.7-0.3,1.2-0.6,1.6 C59.7,47.8,58.3,47.8,57.6,47.8z M51.3,46.8h6.3c0.8,0,1.6-0.1,2.1-0.9c0.2-0.3,0.3-0.7,0.4-1.3l0.3-1.4c0.1-0.3,0.1-0.9,0.1-1.1 c0-0.2-0.1-0.4-1-0.7l-3.9-1.1l0.5-1.9H59l-0.2,0.7h2.5l0.6-2.4h-6.1c-1.6,0-2.1,0.2-2.7,2.4l-0.4,1.4c-0.1,0.3-0.1,0.5-0.1,0.8 c0,0.3,0,0.3,0.8,0.5l4.3,1.1l-0.5,2.2h-2.8l0.2-0.8h-2.8L51.3,46.8z M55.7,44.1h0.7l0.1-0.4l-0.6-0.2L55.7,44.1z M56.9,39.5 l0.8,0.2l0.1-0.4h-0.8L56.9,39.5z"></path> <path class="lhdr1" d="M67.6,47.8h-3.9c-0.8,0-2.6,0-2.6-2c0-0.7,0.2-1.6,0.4-2.4l1.1-4.5c0.5-1.9,1.3-3.2,3.6-3.2h3.7 c0.8,0,2.7,0,2.7,2c0,0.3,0,0.6-0.1,1l-1,4.1h0.2L71,45.1C70.6,47,70,47.8,67.6,47.8z M66.1,36.7c-1.5,0-2.1,0.6-2.6,2.5l-0.3,1.2 l-0.8,3.3c-0.2,0.7-0.4,1.5-0.4,2.1c0,0.8,0.3,1,1.6,1h3.9c1.8,0,2.1-0.4,2.5-1.9l0.3-1h-2.7l-0.3,1.2h-2.5l0.1-0.6 c0.1-0.5,0.2-0.9,0.3-1.3l0.3-1.2h5l0.8-3.5c0.1-0.3,0.1-0.5,0.1-0.7c0-0.8-0.4-1-1.7-1H66.1z M66.1,44.1h0.4l0.3-1.1h-0.4 l-0.1,0.4C66.2,43.7,66.2,43.9,66.1,44.1z M68.4,41H66l0.1-0.6c0.1-0.8,0.2-1,0.4-1.7l0.1-0.3H69L68.4,41z M67.1,40h0.4l0.1-0.6 h-0.4C67.2,39.6,67.2,39.7,67.1,40z"></path> <path class="lhdr1" d="M77.2,47.8h-7l1-4h1l1-4.1h-1l1-4h6l-0.1,0.4l0.5-0.4h0.9c1.9,0,2.2,1,2.2,1.7c0,0.3,0,0.6-0.1,0.9l-0.8,3.3 h-3.6l0.5-1.9h-0.3l-1,4.1h1.1L77.2,47.8z M71.4,46.8h4.9l0.5-2h-1.1l1.4-5.8l0,0l0.6-2.3h-3.9l-0.5,2h1L73,44.8h-1L71.4,46.8z M79.2,40.6h1.6l0.6-2.6c0.1-0.2,0.1-0.4,0.1-0.6c0-0.3-0.1-0.7-1.2-0.7h-0.5l-2.2,2h2.1L79.2,40.6z"></path> <path class="lhdr1" d="M88,47.8h-6.2l0.4-8.1h-0.6l1-4h4.6l-0.5,4.9l1.9-4.9h4.7l-1,4h-0.7L88,47.8z M82.9,46.8h4.5l3.5-8.1h0.6 l0.5-2h-2.7l-3,7.7l-1-0.2l0.8-7.4h-2.7l-0.5,2h0.4L82.9,46.8z"></path> <path class="lhdr1" d="M96.5,47.8h-6.7l1-4h0.9l1-4.1h-1l1-4h5.9l-2,8.1h0.9L96.5,47.8z M91.1,46.8h4.6l0.5-2h-0.9l2-8.1h-3.8l-0.5,2 h1l-1.5,6.1h-0.9L91.1,46.8z M96.5,35.3c-1.2,0-2.2-1-2.2-2.2c0-1.2,1-2.2,2.2-2.2c1.2,0,2.2,1,2.2,2.2 C98.7,34.3,97.7,35.3,96.5,35.3z M96.5,31.9c-0.6,0-1.2,0.6-1.2,1.2c0,0.7,0.5,1.2,1.2,1.2c0.6,0,1.2-0.6,1.2-1.2 C97.7,32.5,97.1,31.9,96.5,31.9z"></path> <path class="lhdr1" d="M102.4,47.8H99c-2.2,0-2.5-1.4-2.5-2c0-0.6,0.2-1.9,0.4-2.5l0.9-3.6c0.7-2.7,1.3-4,4.1-4h3.1 c0.9,0,2.8,0,2.8,2c0,0.3-0.1,0.6-0.1,0.9l-0.6,2.3h-4.4l0.3-1.2h-0.3c-0.4,1.4-0.8,3-1,4.1h0.3l0.3-1.1h4.5l-0.6,2.3 c-0.2,0.8-0.6,1.7-1.6,2.4C103.9,47.8,103.1,47.8,102.4,47.8z M101.9,36.7c-1.9,0-2.4,0.5-3.1,3.3l-0.9,3.6 c-0.2,0.6-0.4,1.8-0.4,2.2c0,0.3,0,1,1.5,1h3.4c0.7,0,1.2,0,1.7-0.3c0.8-0.4,1-1.1,1.1-1.7l0.3-1.1h-2.5l-0.3,1.1h-2.3l0.1-0.6 c0.2-1.3,0.7-3.4,1.3-5.2l0.1-0.4h2.3l-0.3,1.2h2.3l0.4-1.5c0.1-0.2,0.1-0.4,0.1-0.7c0-0.8-0.4-1-1.8-1H101.9z"></path> <path class="lhdr1" d="M112.4,47.8h-3.9c-0.8,0-2.6,0-2.6-2c0-0.7,0.2-1.6,0.4-2.3l1.1-4.5c0.5-1.9,1.3-3.2,3.6-3.2h3.7 c0.8,0,2.7,0,2.7,2c0,0.3,0,0.6-0.1,1l-1,4.1h0.2l-0.6,2.2C115.4,47,114.8,47.8,112.4,47.8z M110.9,36.7c-1.5,0-2.1,0.6-2.6,2.5 l-0.3,1.2l-0.8,3.3c-0.2,0.7-0.3,1.5-0.3,2.1c0,0.8,0.3,1,1.6,1h3.9c1.8,0,2.1-0.4,2.5-1.9l0.3-1h-2.7l-0.3,1.2h-2.5l0.1-0.6 c0.1-0.5,0.2-0.9,0.3-1.3l0.3-1.2h5l0.9-3.5c0.1-0.3,0.1-0.5,0.1-0.7c0-0.8-0.4-1-1.7-1H110.9z M111,44.1h0.4l0.3-1.1h-0.4 l-0.1,0.4C111.1,43.7,111,43.9,111,44.1z M113.2,41h-2.4l0.1-0.6c0.1-0.8,0.2-1,0.4-1.7l0.1-0.3h2.4L113.2,41z M112,40h0.4l0.1-0.6 h-0.4C112.1,39.6,112,39.7,112,40z"></path> <path class="lhdr1" d="M122.1,47.8h-3.4c-2.2,0-2.5-1.4-2.5-2c0-0.6,0.2-1.8,0.4-2.5l0.9-3.6c0.7-2.7,1.3-4,4.1-4h3.1 c0.9,0,2.8,0,2.8,2c0,0.3-0.1,0.6-0.1,0.9l-0.6,2.3h-4.4l0.3-1.2h-0.3c-0.4,1.4-0.8,3-1,4.1h0.3l0.3-1.1h4.5l-0.6,2.3 c-0.2,0.8-0.5,1.7-1.6,2.4C123.6,47.8,122.8,47.8,122.1,47.8z M121.6,36.7c-1.9,0-2.4,0.5-3.1,3.3l-0.9,3.6 c-0.2,0.6-0.4,1.7-0.4,2.2c0,0.3,0,1,1.5,1h3.4c0.7,0,1.2,0,1.7-0.3c0.8-0.4,1-1.1,1.1-1.7l0.3-1.1h-2.5l-0.3,1.1h-2.3l0.1-0.6 c0.2-1.3,0.7-3.4,1.3-5.2l0.1-0.4h2.3l-0.3,1.2h2.3l0.4-1.5c0.1-0.2,0.1-0.4,0.1-0.7c0-0.8-0.4-1-1.8-1H121.6z"></path> <path class="lhdr1" d="M132.3,47.8h-3.9c-0.8,0-2.6,0-2.6-2c0-0.7,0.2-1.6,0.4-2.3l1.1-4.5c0.5-1.9,1.3-3.2,3.6-3.2h3.7 c0.8,0,2.7,0,2.7,2c0,0.3,0,0.6-0.1,1l-1,4.1h0.2l-0.6,2.2C135.2,47,134.6,47.8,132.3,47.8z M130.8,36.7c-1.5,0-2.1,0.6-2.6,2.5 l-0.3,1.2l-0.8,3.3c-0.2,0.7-0.3,1.5-0.3,2.1c0,0.8,0.3,1,1.6,1h3.9c1.8,0,2.1-0.4,2.5-1.9l0.3-1h-2.7l-0.3,1.2h-2.5l0.1-0.6 c0.1-0.5,0.2-0.9,0.3-1.3l0.3-1.2h5l0.9-3.5c0.1-0.3,0.1-0.5,0.1-0.7c0-0.8-0.4-1-1.7-1H130.8z M130.8,44.1h0.4l0.3-1.1H131 l-0.1,0.4C130.9,43.7,130.8,43.9,130.8,44.1z M133,41h-2.4l0.1-0.6c0.1-0.8,0.2-1,0.4-1.7l0.1-0.3h2.4L133,41z M131.8,40h0.4 l0.1-0.6h-0.4C131.9,39.6,131.8,39.7,131.8,40z"></path> <path class="lhdr1" d="M147.5,47.8h-5.9l2-8.1h-0.9l-2,8.1h-4.9l2-8.1h-0.9l1-4h5.8l-0.2,0.9l1.1-0.9h1.5c1.8,0,2.7,0.6,2.7,1.9 c0,0.4-0.1,0.9-0.3,1.7l-1.1,4.5h1.1L147.5,47.8z M142.9,46.8h3.8l0.5-2h-1.1l1.4-5.7c0.2-0.7,0.2-1.2,0.2-1.5 c0-0.5-0.3-0.9-1.7-0.9H145l-2.5,2h2.4L142.9,46.8z M137.2,46.8h2.8l1.9-7.6l0,0l0.6-2.5h-3.8l-0.5,2h0.9L137.2,46.8z"></path> <path class="lhdr1" d="M153.6,47.8h-3.8c-0.7,0-1.2-0.2-1.5-0.5c-0.2-0.2-0.3-0.5-0.2-1l0.1-0.5l1.5-6.1h-1l1-4h1L151,34l4.8,0 l-0.4,1.7h1.1l-1,4h-1.1l-1,4.1h1.1L153.6,47.8z M149.9,38.7h1l-1.9,7.7c0,0,0,0.1,0,0.2c0,0,0.1,0.1,0.7,0.1h3.1l0.5-2h-1.1 l1.5-6.1h1.1l0.5-2h-1.1l0.4-1.7l-2.8,0l-0.4,1.7h-1L149.9,38.7z"></path> <path class="lhdr1" d="M160.7,47.8h-3.9c-0.8,0-2.6,0-2.6-2c0-0.7,0.2-1.6,0.4-2.3l1.1-4.5c0.5-1.9,1.3-3.2,3.6-3.2h3.7 c0.8,0,2.7,0,2.7,2c0,0.3,0,0.6-0.1,1l-1,4.1h0.2l-0.6,2.2C163.7,47,163.1,47.8,160.7,47.8z M159.3,36.7c-1.5,0-2.1,0.6-2.6,2.5 l-0.3,1.2l-0.8,3.3c-0.2,0.7-0.3,1.5-0.3,2.1c0,0.8,0.3,1,1.6,1h3.9c1.8,0,2.1-0.4,2.5-1.9l0.3-1h-2.7l-0.3,1.2H158l0.1-0.6 c0.1-0.5,0.2-0.9,0.3-1.3l0.3-1.2h5l0.9-3.5c0.1-0.3,0.1-0.5,0.1-0.7c0-0.8-0.4-1-1.7-1H159.3z M159.3,44.1h0.4L160,43h-0.4 l-0.1,0.4C159.4,43.7,159.3,43.9,159.3,44.1z M161.5,41h-2.4l0.1-0.6c0.1-0.8,0.2-1,0.4-1.7l0.1-0.3h2.4L161.5,41z M160.3,40h0.4 l0.1-0.6h-0.4C160.4,39.6,160.3,39.7,160.3,40z"></path> <path class="lhdr1" d="M170.5,47.8h-7l1-4h1l1-4.1h-1l1-4h6l-0.1,0.4l0.5-0.4h0.8c1.9,0,2.2,1,2.2,1.7c0,0.3,0,0.6-0.1,0.9l-0.8,3.3 h-3.5l0.5-1.9h-0.3l-1,4.1h1.1L170.5,47.8z M164.8,46.8h4.9l0.5-2h-1.1l1.4-5.8l0,0l0.6-2.3h-3.9l-0.5,2h1l-1.5,6.1h-1L164.8,46.8z M172.6,40.6h1.4l0.6-2.6c0.1-0.2,0.1-0.4,0.1-0.6c0-0.3-0.1-0.7-1.2-0.7h-0.4l-2.2,2h2.1L172.6,40.6z"></path> </g> <g> <path class="lhdr4" d="M62.5,36.2l-0.8,3.4h-3.5l0.2-0.7h-1.9l-0.3,1l3.4,1c0.9,0.2,1.4,0.5,1.4,1.2c0,0.3-0.1,0.9-0.2,1.2l-0.3,1.4 c-0.1,0.6-0.3,1.1-0.5,1.5c-0.7,1.1-1.8,1.2-2.5,1.2h-6.9l0.9-3.4h3.8l-0.2,0.8h1.7l0.3-1.3l-3.8-0.9c-0.9-0.2-1.2-0.4-1.2-1 c0-0.3,0.1-0.6,0.2-0.9l0.4-1.4c0.6-2.3,1.2-2.8,3.1-2.8H62.5z"></path> <path class="lhdr4" d="M71,43.4L70.6,45c-0.4,1.7-0.9,2.3-2.9,2.3h-3.9c-1,0-2.1-0.1-2.1-1.5c0-0.8,0.3-1.9,0.5-2.7l0.7-2.9l0.3-1.2 c0.5-2,1.2-2.8,3.1-2.8h3.7c1.1,0,2.2,0.1,2.2,1.5c0,0.3,0,0.6-0.1,0.8L71,42.5h-5c-0.2,0.9-0.3,1.4-0.5,2.1H67l0.3-1.2H71z M66.9,38.9c-0.2,0.6-0.3,0.8-0.4,1.6H68l0.4-1.6H66.9z"></path> <path class="lhdr4" d="M77.7,39.2l-1.2,5.1h1.1l-0.7,3h-6l0.7-3h1l1.2-5.1h-1l0.7-3h4.9l-0.3,1.4l1.5-1.4h0.7c0.5,0,1.7,0,1.7,1.2 c0,0.3,0,0.5-0.1,0.8l-0.7,2.9h-2.6l0.5-1.9H77.7z"></path> <path class="lhdr4" d="M92.6,36.2l-0.7,3h-0.6l-3.5,8.1h-5.3l0.4-8.1h-0.5l0.7-3h3.6l-0.8,8l3.1-8H92.6z"></path> <path class="lhdr4" d="M97.8,36.2l-2,8.1h0.9l-0.7,3h-5.7l0.7-3H92l1.2-5.1h-1l0.7-3H97.8z M96.5,31.4c0.9,0,1.7,0.8,1.7,1.7 c0,0.9-0.8,1.7-1.7,1.7c-0.9,0-1.7-0.8-1.7-1.7C94.8,32.2,95.6,31.4,96.5,31.4z"></path> <path class="lhdr4" d="M106.2,43.2l-0.4,1.7c-0.2,0.7-0.4,1.5-1.4,2c-0.6,0.4-1.3,0.4-2,0.4H99c-0.7,0-2-0.1-2-1.5 c0-0.6,0.2-1.7,0.4-2.4l0.9-3.6c0.7-2.8,1.2-3.7,3.6-3.7h3.1c1.1,0,2.3,0,2.3,1.5c0,0.4-0.1,0.7-0.2,1l-0.4,1.7h-3.4l0.3-1.2h-1.3 c-0.5,1.6-1,3.8-1.2,5.1h1.3l0.3-1.1H106.2z"></path> <path class="lhdr4" d="M115.8,43.4l-0.4,1.6c-0.4,1.7-0.9,2.3-2.9,2.3h-3.9c-1,0-2.1-0.1-2.1-1.5c0-0.8,0.3-1.9,0.5-2.7l0.7-2.9 l0.3-1.2c0.5-2,1.2-2.8,3.1-2.8h3.7c1.1,0,2.2,0.1,2.2,1.5c0,0.3,0,0.6-0.1,0.8l-0.9,3.9h-5c-0.2,0.9-0.3,1.4-0.5,2.1h1.4l0.3-1.2 H115.8z M111.8,38.9c-0.2,0.6-0.3,0.8-0.4,1.6h1.4l0.4-1.6H111.8z"></path> <path class="lhdr0" d="M125.9,43.2l-0.4,1.7c-0.2,0.7-0.4,1.5-1.4,2c-0.6,0.4-1.3,0.4-2,0.4h-3.4c-0.7,0-2-0.1-2-1.5 c0-0.6,0.2-1.7,0.4-2.4l0.9-3.6c0.7-2.8,1.2-3.7,3.6-3.7h3.1c1.1,0,2.3,0,2.3,1.5c0,0.4-0.1,0.7-0.2,1l-0.4,1.7h-3.4l0.3-1.2H122 c-0.5,1.6-1,3.8-1.2,5.1h1.3l0.3-1.1H125.9z"></path> <path class="lhdr0" d="M135.6,43.4l-0.4,1.6c-0.4,1.7-0.9,2.3-2.9,2.3h-3.9c-1,0-2.1-0.1-2.1-1.5c0-0.8,0.3-1.9,0.5-2.7l0.7-2.9 l0.3-1.2c0.5-2,1.2-2.8,3.1-2.8h3.7c1.1,0,2.2,0.1,2.2,1.5c0,0.3,0,0.6-0.1,0.8l-0.9,3.9h-5c-0.2,0.9-0.3,1.4-0.5,2.1h1.4l0.3-1.2 H135.6z M131.6,38.9c-0.2,0.6-0.3,0.8-0.4,1.6h1.4l0.4-1.6H131.6z"></path> <path class="lhdr0" d="M143.1,36.2l-0.4,1.7l2.1-1.7h1.4c0.8,0,2.2,0.1,2.2,1.4c0,0.4-0.1,1.1-0.3,1.6l-1.3,5.1h1.1l-0.7,3h-4.8 l2-8.1h-1.9l-2,8.1h-3.9l2-8.1h-0.9l0.7-3H143.1z"></path> <path class="lhdr0" d="M155.9,36.2l-0.7,3h-1.1l-1.2,5.1h1.1l-0.7,3h-3.4c-1,0-1.3-0.3-1.2-0.9l0.1-0.5l1.7-6.7h-1l0.7-3h1l0.4-1.7 l3.8,0l-0.4,1.7H155.9z"></path> <path class="lhdr0" d="M164.1,43.4l-0.4,1.6c-0.4,1.7-0.9,2.3-2.9,2.3h-3.9c-1,0-2.1-0.1-2.1-1.5c0-0.8,0.3-1.9,0.5-2.7l0.7-2.9 l0.3-1.2c0.5-2,1.2-2.8,3.1-2.8h3.7c1.1,0,2.2,0.1,2.2,1.5c0,0.3,0,0.6-0.1,0.8l-0.9,3.9h-5c-0.2,0.9-0.3,1.4-0.5,2.1h1.4l0.3-1.2 H164.1z M160.1,38.9c-0.2,0.6-0.3,0.8-0.4,1.6h1.4l0.4-1.6H160.1z"></path> <path class="lhdr0" d="M171,39.2l-1.2,5.1h1.1l-0.7,3h-6l0.7-3h1l1.2-5.1h-1l0.7-3h4.9l-0.3,1.4l1.5-1.4h0.6c0.5,0,1.7,0,1.7,1.2 c0,0.3,0,0.5-0.1,0.8l-0.7,2.9h-2.5l0.5-1.9H171z"></path> </g> <g> <path class="lhdr2" d="M72.8,53c-1.1,0-2,0.1-2.8,1c-0.9,1-1,1.9-1.3,3.1l-1.1,4.1c-0.2,0.7-0.4,1.5-0.4,2.2c0,1.7,1.4,1.9,2.5,1.9 H72c0.9,0,1.7-0.1,2.6-0.6c0.8-0.6,1.1-1.3,1.5-3.1l1.1-4.5c0.2-0.6,0.3-1.3,0.5-2c0-0.2,0.1-0.4,0.1-0.6c0-0.5-0.2-0.9-0.6-1.1 C76.6,53,75.8,53,75.2,53H72.8L72.8,53z M74.4,55.6c-0.3,1-1.6,6.5-1.8,7.1h-1.8c0.4-1.8,1.3-5.7,1.8-7.1H74.4L74.4,55.6z"></path> <path class="lhdr2" d="M86.8,55.4c0.1-0.3,0.1-0.6,0.1-0.9c0-1.3-1.2-1.5-2-1.5h-2.6c-1.4,0-2.1,0.1-2.8,0.9 c-0.5,0.5-0.6,0.9-0.8,1.5l-0.3,1.3c-0.1,0.5-0.1,0.8-0.1,1.1c0,0.8,0.6,1,1.1,1.2c-1.4,0.5-1.9,0.9-2.3,2.3l-0.4,1.6 c-0.1,0.3-0.1,0.5-0.1,0.8c0,0.7,0.3,1.1,0.6,1.2c0.5,0.3,1.5,0.3,2.1,0.3h2c1.3,0,2.3-0.1,3.1-1.1c0.4-0.5,0.5-0.9,0.7-1.4 l0.4-1.4c0.1-0.3,0.1-0.6,0.1-0.8c0-1.1-0.8-1.4-1.3-1.5c1.5-0.6,1.8-1.3,2-2.1L86.8,55.4L86.8,55.4z M81.8,55.6h1.9l-0.6,2.2h-1.9 L81.8,55.6L81.8,55.6z M80.7,60.2h1.9l-0.6,2.5h-1.9L80.7,60.2L80.7,60.2z"></path> <polygon class="lhdr4" points="87.1,58.7 86.7,60.4 90.5,60.4 90.9,58.7 87.1,58.7 "></polygon> <path class="lhdr4" d="M93.5,53l-1.6,6.5h4.9L96,62.7h-2l0.4-1.7h-3.2l-0.4,1.5c-0.1,0.3-0.2,0.7-0.2,1c0,1.7,1.8,1.7,2.8,1.7h1.7 c1,0,2.5,0,3.4-1.2c0.4-0.6,0.6-1.4,0.8-2l0.5-2c0.1-0.6,0.3-1.2,0.3-1.8c0-1.4-1-1.4-2-1.5h-2.5l0.3-1.3h5l0.6-2.5H93.5L93.5,53z"></path> <polygon class="lhdr4" points="102.2,53 101.2,57.1 104.2,57.1 104.5,55.6 106.7,55.6 100.6,65.2 104.3,65.2 110.4,54.9 110.8,53 102.2,53 "></polygon> <path class="lhdr2" d="M114.2,53c-1.1,0-2,0.1-2.8,1c-0.9,1-1,1.9-1.3,3.1l-1.1,4.1c-0.2,0.7-0.4,1.5-0.4,2.2c0,1.7,1.4,1.9,2.5,1.9 h2.2c0.9,0,1.7-0.1,2.6-0.6c0.8-0.6,1.1-1.3,1.5-3.1l1.1-4.5c0.2-0.6,0.3-1.3,0.5-2c0-0.2,0.1-0.4,0.1-0.6c0-0.5-0.2-0.9-0.6-1.1 c-0.5-0.3-1.3-0.3-1.9-0.3H114.2L114.2,53z M115.8,55.6c-0.3,1-1.6,6.5-1.8,7.1h-1.8c0.4-1.8,1.3-5.7,1.8-7.1H115.8L115.8,55.6z"></path> <path class="lhdr4" d="M126.3,62.7l4.2-3.7l0.8-3.2c0.1-0.3,0.2-0.7,0.2-1c0-0.6-0.2-1-0.5-1.3c-0.5-0.4-1-0.4-1.5-0.5h-3.1 c-0.7,0-1.6,0-2.5,0.9c-0.5,0.6-0.7,1.1-0.9,1.6l-0.6,2.3h3.1l0.6-2.3h2l-0.7,2.7l-6.1,5.2l-0.4,1.7h8.5l0.6-2.5H126.3L126.3,62.7z "></path> <polygon class="lhdr4" points="132.8,53 131.8,57.1 134.8,57.1 135.2,55.6 137.3,55.6 131.3,65.2 135,65.2 141,54.9 141.5,53 132.8,53 "></polygon> <path class="lhdr2" d="M149.6,55.4c0.1-0.3,0.1-0.6,0.1-0.9c0-1.3-1.2-1.5-2-1.5h-2.6c-1.4,0-2.1,0.1-2.8,0.9 c-0.5,0.5-0.6,0.9-0.8,1.5l-0.3,1.3c-0.1,0.5-0.1,0.8-0.1,1.1c0,0.8,0.6,1,1.1,1.2c-1.4,0.5-1.9,0.9-2.3,2.3l-0.4,1.6 c-0.1,0.3-0.1,0.5-0.1,0.8c0,0.7,0.3,1.1,0.6,1.2c0.5,0.3,1.5,0.3,2.1,0.3h2c1.3,0,2.3-0.1,3.1-1.1c0.4-0.5,0.5-0.9,0.7-1.4 l0.4-1.4c0.1-0.3,0.1-0.6,0.1-0.8c0-1.1-0.8-1.4-1.3-1.5c1.5-0.6,1.8-1.3,2-2.1L149.6,55.4L149.6,55.4z M144.6,55.6h1.9l-0.6,2.2 H144L144.6,55.6L144.6,55.6z M143.4,60.2h1.9l-0.6,2.5h-1.9L143.4,60.2L143.4,60.2z"></path> <path class="lhdr2" d="M157.5,53c-1.1,0-2,0.1-2.8,1c-0.9,1-1,1.9-1.3,3.1l-1.1,4.1c-0.2,0.7-0.4,1.5-0.4,2.2c0,1.7,1.4,1.9,2.5,1.9 h2.2c0.9,0,1.7-0.1,2.6-0.6c0.8-0.6,1.1-1.3,1.5-3.1L162,57c0.2-0.6,0.3-1.3,0.5-2c0-0.2,0.1-0.4,0.1-0.6c0-0.5-0.2-0.9-0.6-1.1 c-0.5-0.3-1.3-0.3-1.9-0.3H157.5L157.5,53z M159.1,55.6c-0.3,1-1.6,6.5-1.8,7.1h-1.8c0.4-1.8,1.3-5.7,1.8-7.1H159.1L159.1,55.6z"></path> <path class="lhdr2" d="M166.9,53c-1.1,0-2,0.1-2.8,1c-0.9,1-1,1.9-1.3,3.1l-1.1,4.1c-0.2,0.7-0.4,1.5-0.4,2.2c0,1.7,1.4,1.9,2.5,1.9 h2.2c0.9,0,1.7-0.1,2.6-0.6c0.8-0.6,1.1-1.3,1.5-3.1l1.1-4.5c0.2-0.6,0.3-1.3,0.5-2c0-0.2,0.1-0.4,0.1-0.6c0-0.5-0.2-0.9-0.6-1.1 c-0.5-0.3-1.3-0.3-1.9-0.3H166.9L166.9,53z M168.5,55.6c-0.3,1-1.6,6.5-1.8,7.1h-1.8c0.4-1.8,1.3-5.7,1.8-7.1H168.5L168.5,55.6z"></path> </g> </svg>
+        <p>Personlig bilverkstad på Värmdö och i Haninge sedan 2001. Auktoriserad för Chevrolet, Citroën, Isuzu, Subaru och Suzuki.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Gustavsberg</h4>
+        <p>
+          Chamottevägen 10<br>
+          134 53 Gustavsberg<br>
+          08-570 278 00
+        </p>
+      </div>
+      <div class="footer-section">
+        <h4>Haninge</h4>
+        <p>
+          Lignells väg 5<br>
+          136 49 Vega<br>
+          08-570 278 00
+        </p>
+      </div>
+      <div class="footer-section">
+        <h4>Snabblänkar</h4>
+        <ul>
+          <li><a href="#">Boka verkstad</a></li>
+          <li><a href="#">Tjänster</a></li>
+          <li><a href="#">Vanliga frågor</a></li>
+          <li><a href="#">Om oss</a></li>
+          <li><a href="#">Integritetspolicy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Dannevall Servicecenter</span>
+      <span>Gustavsberg 556788-7038 · Haninge 559162-8218</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
